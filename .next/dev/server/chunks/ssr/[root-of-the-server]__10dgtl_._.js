@@ -73,7 +73,23 @@ var __TURBOPACK__imported__module__$5b$next$5d2f$internal$2f$font$2f$google$2f$p
 ;
 const metadata = {
     title: "Casa Apícola Los Cerezos",
-    description: "Miel artesanal, apicultura y tradición familiar en Caldas Boyacá."
+    description: "Miel artesanal, propóleo, apicultura y tradición familiar en Boyacá.",
+    keywords: [
+        "miel artesanal",
+        "apicultura Boyacá",
+        "miel natural",
+        "propóleo",
+        "apiarios",
+        "colmenas"
+    ],
+    openGraph: {
+        title: "Casa Apícola Los Cerezos",
+        description: "Más de 30 años de tradición apícola familiar en Boyacá.",
+        url: "https://TU-DOMINIO.vercel.app",
+        siteName: "Casa Apícola Los Cerezos",
+        locale: "es_CO",
+        type: "website"
+    }
 };
 function RootLayout({ children }) {
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("html", {
@@ -83,12 +99,12 @@ function RootLayout({ children }) {
             children: children
         }, void 0, false, {
             fileName: "[project]/src/app/layout.tsx",
-            lineNumber: 29,
+            lineNumber: 55,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/app/layout.tsx",
-        lineNumber: 28,
+        lineNumber: 53,
         columnNumber: 5
     }, this);
 }

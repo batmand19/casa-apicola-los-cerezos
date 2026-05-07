@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import { Inter, Playfair_Display } from "next/font/google";
 
 import "./globals.css";
@@ -16,7 +17,31 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Casa Apícola Los Cerezos",
   description:
-    "Miel artesanal, apicultura y tradición familiar en Caldas Boyacá.",
+    "Miel artesanal, propóleo, apicultura y tradición familiar en Boyacá.",
+
+  keywords: [
+    "miel artesanal",
+    "apicultura Boyacá",
+    "miel natural",
+    "propóleo",
+    "apiarios",
+    "colmenas",
+  ],
+
+  openGraph: {
+    title: "Casa Apícola Los Cerezos",
+
+    description:
+      "Más de 30 años de tradición apícola familiar en Boyacá.",
+
+    url: "https://TU-DOMINIO.vercel.app",
+
+    siteName: "Casa Apícola Los Cerezos",
+
+    locale: "es_CO",
+
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -26,11 +51,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
+
       <body
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
         {children}
       </body>
+
     </html>
   );
 }
