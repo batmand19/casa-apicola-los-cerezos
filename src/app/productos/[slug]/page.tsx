@@ -1,11 +1,28 @@
 import Image from "next/image";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-
 import { products } from "@/data/products";
+import { generateWhatsAppLink } from "@/lib/whatsapp";
 
 interface ProductPageProps {
   params: {
     slug: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+
+  const { slug } = await params;
+
+  return {
+    title: `${slug} | Casa Apícola Los Cerezos`,
+
+    description:
+      "Producto artesanal apícola de Boyacá.",
   };
 }
 
@@ -55,9 +72,11 @@ export default function ProductPage({
           </div>
 
           <a
-            href={`https://wa.me/573XXXXXXXXX?text=${encodeURIComponent(product.whatsappMessage)}`}
+            href={generateWhatsAppLink(
+              product.whatsappMessage
+            )}
             target="_blank"
-            className="bg-[#c98b2e] hover:bg-[#b67c28] transition px-8 py-4 rounded-full text-white font-semibold"
+            className="inline-flex items-center gap-3 bg-[#c98b2e] hover:bg-[#b67c28] transition px-8 py-4 rounded-full text-white font-semibold shadow-lg"
           >
             Solicitar información
           </a>

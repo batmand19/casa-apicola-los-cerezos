@@ -6,9 +6,11 @@ import Story from "@/sections/Story";
 import Bees from "@/sections/Bees";
 import StickyCTA from "@/components/StickyCTA";
 import Timeline from "@/sections/Timeline";
+import MediaGallery from "@/sections/MediaGallery";
 import Testimonials from "@/sections/Testimonials";
 import FAQ from "@/sections/FAQ";
 import Products from "@/sections/Products";
+import Documentary from "@/sections/Documentary";
 import Services from "@/sections/Services";
 import Contact from "@/sections/Contact";
 
@@ -31,7 +33,11 @@ export default function Home() {
 
       <Timeline />
 
+      <MediaGallery />
+
       <Testimonials />
+
+      <Documentary />
 
       <FAQ />
 

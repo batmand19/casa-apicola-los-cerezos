@@ -1,45 +1,35 @@
-"use client";
-
-import { useState } from "react";
-
 export default function ContactForm() {
-  const [sent, setSent] = useState(false);
-
-  function handleSubmit(
-    e: React.FormEvent<HTMLFormElement>
-  ) {
-    e.preventDefault();
-
-    setSent(true);
-  }
-
   return (
-    <div className="bg-white rounded-3xl p-10 shadow-lg">
+    <div className="bg-white rounded-3xl p-10 shadow-2xl text-black">
 
       <form
-        onSubmit={handleSubmit}
+        action="https://formsubmit.co/danielcanon044@gmail.com"
+        method="POST"
         className="space-y-6"
       >
 
         <input
           type="text"
+          name="nombre"
           placeholder="Nombre"
-          className="w-full border border-[#d8c7ae] rounded-2xl px-5 py-4 outline-none"
           required
+          className="w-full border border-[#d8c7ae] rounded-2xl px-5 py-4 outline-none text-black"
         />
 
         <input
           type="email"
+          name="correo"
           placeholder="Correo"
-          className="w-full border border-[#d8c7ae] rounded-2xl px-5 py-4 outline-none"
           required
+          className="w-full border border-[#d8c7ae] rounded-2xl px-5 py-4 outline-none text-black"
         />
 
         <textarea
+          name="mensaje"
           placeholder="Mensaje"
           rows={5}
-          className="w-full border border-[#d8c7ae] rounded-2xl px-5 py-4 outline-none resize-none"
           required
+          className="w-full border border-[#d8c7ae] rounded-2xl px-5 py-4 outline-none resize-none text-black"
         />
 
         <button
@@ -48,12 +38,6 @@ export default function ContactForm() {
         >
           Enviar
         </button>
-
-        {sent && (
-          <p className="text-green-700">
-            Mensaje enviado correctamente.
-          </p>
-        )}
 
       </form>
     </div>

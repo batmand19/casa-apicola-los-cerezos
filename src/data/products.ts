@@ -1,8 +1,10 @@
-export const products = [
+import { Product } from "@/types/product";
+
+export const products: Product[] = [
   {
     slug: "miel-artesanal",
+
     name: "Miel Artesanal",
-    category: "consumo",
 
     image: "/miel.jpg",
 
@@ -10,66 +12,53 @@ export const products = [
       "Miel natural producida en Boyacá.",
 
     description:
-      "Miel artesanal obtenida mediante procesos naturales y responsables con las abejas.",
+      "Miel artesanal obtenida mediante manejo responsable y procesos naturales.",
 
     price: "$25.000",
+
+    category: "consumo",
 
     whatsappMessage:
       "Hola, quiero información sobre la miel artesanal.",
   },
 
   {
-    slug: "polen-natural",
-    name: "Polen Natural",
-    category: "consumo",
+    slug: "propoleo-natural",
 
-    image: "/polen.jpg",
-
-    shortDescription:
-      "Polen apícola natural.",
-
-    description:
-      "Polen recolectado cuidadosamente como suplemento natural.",
-
-    price: "$30.000",
-
-    whatsappMessage:
-      "Hola, quiero información sobre el polen natural.",
-  },
-
-  {
-    slug: "propoleo-artesanal",
-    name: "Propóleo Artesanal",
-    category: "consumo",
+    name: "Propóleo Natural",
 
     image: "/propoleo.jpg",
 
     shortDescription:
-      "Preparación artesanal tradicional.",
+      "Mezcla natural con plantas medicinales.",
 
     description:
-      "Mezcla tradicional elaborada con ingredientes naturales y propóleo.",
+      "Propóleo artesanal utilizado tradicionalmente para bienestar y defensas.",
 
     price: "$20.000",
 
+    category: "consumo",
+
     whatsappMessage:
-      "Hola, quiero información sobre el propóleo artesanal.",
+      "Hola, quiero información sobre el propóleo.",
   },
 
   {
     slug: "nucleos-apicolas",
+
     name: "Núcleos Apícolas",
-    category: "apicultores",
 
     image: "/nucleo.jpg",
 
     shortDescription:
-      "Material vivo para apiarios.",
+      "Material vivo para nuevos apiarios.",
 
     description:
-      "Núcleos apícolas desarrollados bajo manejo responsable y experiencia práctica.",
+      "Núcleos preparados mediante manejo responsable y experiencia práctica.",
 
-    price: "Cotizar",
+    price: "Consultar",
+
+    category: "apicultores",
 
     whatsappMessage:
       "Hola, quiero información sobre núcleos apícolas.",

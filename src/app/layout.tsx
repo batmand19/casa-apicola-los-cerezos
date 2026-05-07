@@ -1,63 +1,69 @@
-import type { Metadata } from "next";
-
-import { Inter, Playfair_Display } from "next/font/google";
-
-import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-});
-
-const playfair = Playfair_Display({
-  subsets: ["latin"],
-  variable: "--font-playfair",
-});
-
 export const metadata: Metadata = {
-  title: "Casa Apícola Los Cerezos",
+  metadataBase: new URL(
+    "https://TU-DOMINIO.vercel.app"
+  ),
+
+  title: {
+    default:
+      "Casa Apícola Los Cerezos",
+
+    template:
+      "%s | Casa Apícola Los Cerezos",
+  },
+
   description:
     "Miel artesanal, propóleo, apicultura y tradición familiar en Boyacá.",
 
   keywords: [
     "miel artesanal",
-    "apicultura Boyacá",
-    "miel natural",
+    "miel boyacá",
     "propóleo",
+    "apicultura",
     "apiarios",
     "colmenas",
+    "miel natural colombia",
   ],
 
   openGraph: {
-    title: "Casa Apícola Los Cerezos",
+    title:
+      "Casa Apícola Los Cerezos",
 
     description:
-      "Más de 30 años de tradición apícola familiar en Boyacá.",
+      "Más de 30 años de tradición apícola familiar.",
 
-    url: "https://TU-DOMINIO.vercel.app",
+    url:
+      "https://TU-DOMINIO.vercel.app",
 
-    siteName: "Casa Apícola Los Cerezos",
+    siteName:
+      "Casa Apícola Los Cerezos",
+
+    images: [
+      {
+        url: "/og-image.jpg",
+
+        width: 1200,
+
+        height: 630,
+
+        alt:
+          "Casa Apícola Los Cerezos",
+      },
+    ],
 
     locale: "es_CO",
 
     type: "website",
   },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "Casa Apícola Los Cerezos",
+
+    description:
+      "Tradición apícola familiar en Boyacá.",
+
+    images: ["/og-image.jpg"],
+  },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="es">
-
-      <body
-        className={`${inter.variable} ${playfair.variable} antialiased`}
-      >
-        {children}
-      </body>
-
-    </html>
-  );
-}
