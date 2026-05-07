@@ -1,0 +1,9 @@
+{"timestamp":"00:00:00.726","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:05.580","source":"Browser","level":"INFO","message":"%cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold"}
+{"timestamp":"00:00:05.646","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/padre-apicultor.jpg\" \"received\" null"}
+{"timestamp":"00:00:11.011","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/miel.jpg\" \"received\" null"}
+{"timestamp":"00:00:11.012","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/polen.jpg\" \"received\" null"}
+{"timestamp":"00:00:11.017","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/propoleo.jpg\" \"received\" null"}
+{"timestamp":"00:00:11.057","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/nucleo.jpg\" \"received\" null"}
+{"timestamp":"00:00:14.805","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/gallery-1.jpg\" \"received\" null"}
+{"timestamp":"00:00:14.809","source":"Server","level":"ERROR","message":"⨯ \"The requested resource isn't a valid image for\" \"/gallery-2.jpg\" \"received\" null"}

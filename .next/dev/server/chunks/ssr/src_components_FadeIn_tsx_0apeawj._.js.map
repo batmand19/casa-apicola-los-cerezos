@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 4, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/Batman/casa-apicola-los-cerezos/src/components/FadeIn.tsx"],"sourcesContent":["\"use client\";\r\n\r\nimport { motion } from \"framer-motion\";\r\nimport { ReactNode } from \"react\";\r\n\r\ninterface FadeInProps {\r\n  children: ReactNode;\r\n}\r\n\r\nexport default function FadeIn({\r\n  children,\r\n}: FadeInProps) {\r\n  return (\r\n    <motion.div\r\n      initial={{ opacity: 0, y: 40 }}\r\n      whileInView={{ opacity: 1, y: 0 }}\r\n      transition={{ duration: 0.8 }}\r\n      viewport={{ once: true }}\r\n    >\r\n      {children}\r\n    </motion.div>\r\n  );\r\n}"],"names":["FadeIn","children","div","initial","opacity","y","whileInView","transition","duration","viewport","once"],"mappings":";;;;;AAEA;AAFA;;;AASe,SAASA,OAAO,EAC7BC,QAAQ,EACI;IACZ,qBACE,8OAAC,oMAAM,CAACC,GAAG;QACTC,SAAS;YAAEC,SAAS;YAAGC,GAAG;QAAG;QAC7BC,aAAa;YAAEF,SAAS;YAAGC,GAAG;QAAE;QAChCE,YAAY;YAAEC,UAAU;QAAI;QAC5BC,UAAU;YAAEC,MAAM;QAAK;kBAEtBT;;;;;;AAGP"}}]
+}
