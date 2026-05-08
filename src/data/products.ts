@@ -2,65 +2,80 @@ import { Product } from "@/types/product";
 
 export const products: Product[] = [
   {
-    slug: "miel-artesanal",
+    slug:
+      "miel-artesanal-500g",
 
-    name: "Miel Artesanal",
+    name:
+      "Miel Artesanal 500g",
 
-    image: "/miel.jpg",
+    image:
+      "/miel.jpg",
 
     shortDescription:
-      "Miel natural producida en Boyacá.",
+      "Miel 100% natural y artesanal.",
 
     description:
-      "Miel artesanal obtenida mediante manejo responsable y procesos naturales.",
+      "Miel 100% natural, pura y colombiana, extraída de Boyacá y departamentos aledaños. Producción artesanal sin químicos, conservando el sabor y propiedades naturales de la miel.",
 
-    price: "$25.000",
+    price:
+      "$28.000 COP",
 
-    category: "consumo",
+    category:
+      "consumo",
 
     whatsappMessage:
-      "Hola, quiero información sobre la miel artesanal.",
+      "Hola, quiero comprar miel artesanal de 500g.",
   },
 
   {
-    slug: "propoleo-natural",
+    slug:
+      "miel-artesanal-1kg",
 
-    name: "Propóleo Natural",
+    name:
+      "Miel Artesanal 1kg",
 
-    image: "/propoleo.jpg",
+    image:
+      "/miel-kilo.jpg",
 
     shortDescription:
-      "Mezcla natural con plantas medicinales.",
+      "Miel natural de cosecha artesanal.",
 
     description:
-      "Propóleo artesanal utilizado tradicionalmente para bienestar y defensas.",
+      "Miel artesanal colombiana obtenida mediante procesos tradicionales y responsables con las abejas. Producto puro, sin aditivos ni conservantes.",
 
-    price: "$20.000",
+    price:
+      "$50.000 COP",
 
-    category: "consumo",
+    category:
+      "consumo",
 
     whatsappMessage:
-      "Hola, quiero información sobre el propóleo.",
+      "Hola, quiero comprar miel artesanal de 1kg.",
   },
 
   {
-    slug: "nucleos-apicolas",
+    slug:
+      "polen-natural",
 
-    name: "Núcleos Apícolas",
+    name:
+      "Polen Natural",
 
-    image: "/nucleo.jpg",
+    image:
+      "/polen.jpg",
 
     shortDescription:
-      "Material vivo para nuevos apiarios.",
+      "Fuente natural de energía y bienestar.",
 
     description:
-      "Núcleos preparados mediante manejo responsable y experiencia práctica.",
+      "El polen ayuda al descanso, fortalece el sistema inmunológico y aporta energía natural. Rico en antioxidantes y nutrientes esenciales.",
 
-    price: "Consultar",
+    price:
+      "$50.000 COP",
 
-    category: "apicultores",
+    category:
+      "consumo",
 
     whatsappMessage:
-      "Hola, quiero información sobre núcleos apícolas.",
+      "Hola, quiero comprar polen natural.",
   },
 ];

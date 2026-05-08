@@ -1,3 +1,19 @@
+import type { Metadata } from "next";
+import { ProductProvider } from "@/context/ProductContext";
+import { Inter, Playfair_Display } from "next/font/google";
+import "./globals.css";
+import StructuredData from "@/components/StructuredData";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(
     "https://TU-DOMINIO.vercel.app"
@@ -12,16 +28,15 @@ export const metadata: Metadata = {
   },
 
   description:
-    "Miel artesanal, propóleo, apicultura y tradición familiar en Boyacá.",
+    "Miel artesanal, propóleo y tradición apícola familiar en Boyacá.",
 
   keywords: [
     "miel artesanal",
-    "miel boyacá",
+    "apicultura boyacá",
+    "miel natural",
     "propóleo",
-    "apicultura",
     "apiarios",
     "colmenas",
-    "miel natural colombia",
   ],
 
   openGraph: {
@@ -67,3 +82,27 @@ export const metadata: Metadata = {
     images: ["/og-image.jpg"],
   },
 };
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="es">
+
+      <body
+        className={`${inter.variable} ${playfair.variable} antialiased`}
+      >
+
+        <StructuredData />
+
+        <ProductProvider>
+          {children}
+        </ProductProvider>
+
+      </body>
+
+    </html>
+  );
+}

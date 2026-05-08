@@ -1,77 +1,89 @@
-import Link from "next/link";
+import { siteConfig } from "@/config/site";
+
+import {
+  getWhatsAppLink,
+  getCallLink,
+  getEmailLink,
+} from "@/lib/contact";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1d160f] text-[#f4e7cf] py-20">
+    <footer className="bg-[#2c2218] text-white mt-32">
 
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div className="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-3 gap-12">
 
-        {/* BRAND */}
         <div>
 
-          <h3 className="text-3xl mb-4">
-            Casa Apícola Los Cerezos
+          <h3 className="text-3xl mb-6">
+            {siteConfig.brand.name}
           </h3>
 
-          <p className="leading-relaxed opacity-80">
-            Pureza y tradición en cada cosecha.
+          <p className="text-white/70 leading-relaxed">
+            {siteConfig.brand.description}
           </p>
 
         </div>
 
-        {/* LINKS */}
         <div>
 
-          <h4 className="text-xl mb-4">
-            Navegación
+          <h4 className="text-xl mb-6">
+            Contacto
           </h4>
 
-          <div className="flex flex-col gap-3 opacity-80">
+          <div className="space-y-3 text-white/70">
 
-            <Link href="/">
-              Inicio
-            </Link>
+            <a
+              href={getWhatsAppLink()}
+              target="_blank"
+              className="block hover:text-white transition"
+            >
+              WhatsApp
+            </a>
 
-            <Link href="/consumo">
-              Consumo
-            </Link>
+            <a
+              href={getCallLink()}
+              className="block hover:text-white transition"
+            >
+              Llamar
+            </a>
 
-            <Link href="/apicultores">
-              Apicultores
-            </Link>
-
-            <Link href="/servicios">
-              Servicios
-            </Link>
+            <a
+              href={getEmailLink()}
+              className="block hover:text-white transition"
+            >
+              Correo
+            </a>
 
           </div>
+
         </div>
 
-        {/* LOCATION */}
         <div>
 
-          <h4 className="text-xl mb-4">
-            Ubicación
+          <h4 className="text-xl mb-6">
+            Información
           </h4>
 
-          <div className="opacity-80 leading-relaxed">
+          <div className="space-y-3 text-white/70">
 
-            <p>Vereda La Playa</p>
+            <p>
+              {siteConfig.contact.location}
+            </p>
 
-            <p>Caldas, Boyacá</p>
+            <p>
+              {siteConfig.contact.schedule}
+            </p>
 
-            <p>Colombia</p>
+            <p>
+              Envíos nacionales disponibles
+            </p>
 
           </div>
+
         </div>
 
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 mt-16 pt-8 border-t border-white/10 text-sm opacity-60">
-
-        © 2026 Casa Apícola Los Cerezos
-
-      </div>
     </footer>
   );
 }

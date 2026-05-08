@@ -1,20 +1,22 @@
 import Image from "next/image";
-import type { Metadata } from "next";
+
 import { notFound } from "next/navigation";
+
+import type { Metadata } from "next";
+
 import { products } from "@/data/products";
+
 import { generateWhatsAppLink } from "@/lib/whatsapp";
 
 interface ProductPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}: ProductPageProps): Promise<Metadata> {
 
   const { slug } = await params;
 
@@ -26,23 +28,26 @@ export async function generateMetadata({
   };
 }
 
-export default function ProductPage({
+export default async function ProductPage({
   params,
 }: ProductPageProps) {
+
+  const { slug } = await params;
+
   const product = products.find(
-    (item) => item.slug === params.slug
+    (item) => item.slug === slug
   );
 
   if (!product) {
-    return notFound();
+    notFound();
   }
 
   return (
-    <main className="min-h-screen bg-[#f7f1e8] py-24">
+    <main className="min-h-screen bg-[#f7f1e8] py-32">
 
-      <div className="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
 
-        <div className="relative h-[500px] rounded-3xl overflow-hidden">
+        <div className="relative h-[500px] rounded-[32px] overflow-hidden">
 
           <Image
             src={product.image}
@@ -63,13 +68,13 @@ export default function ProductPage({
             {product.name}
           </h1>
 
-          <p className="text-lg leading-relaxed mb-8 text-[#4b3a2c]">
-            {product.description}
+          <p className="text-xl text-[#4b3a2c] mb-8">
+            {product.price}
           </p>
 
-          <div className="text-3xl font-semibold mb-10">
-            {product.price}
-          </div>
+          <p className="text-lg leading-relaxed text-[#4b3a2c] mb-10">
+            {product.description}
+          </p>
 
           <a
             href={generateWhatsAppLink(
@@ -82,7 +87,9 @@ export default function ProductPage({
           </a>
 
         </div>
+
       </div>
+
     </main>
   );
 }

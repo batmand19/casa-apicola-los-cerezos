@@ -7,12 +7,15 @@ import Bees from "@/sections/Bees";
 import StickyCTA from "@/components/StickyCTA";
 import Timeline from "@/sections/Timeline";
 import MediaGallery from "@/sections/MediaGallery";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import Testimonials from "@/sections/Testimonials";
 import FAQ from "@/sections/FAQ";
 import Products from "@/sections/Products";
+import Benefits from "@/sections/Benefits";
 import Documentary from "@/sections/Documentary";
 import Services from "@/sections/Services";
 import Contact from "@/sections/Contact";
+import CommerceBanner from "@/components/CommerceBanner";
 
 export default function Home() {
   return (
@@ -26,7 +29,7 @@ export default function Home() {
       <Bees />
 
       <Products />
-
+<Benefits />
       <Services />
 
       <Gallery />
@@ -45,6 +48,8 @@ export default function Home() {
 
       <Footer />
       <StickyCTA />
+      <CommerceBanner />
+      <FloatingWhatsApp />
     </main>
   );
 }

@@ -1,16 +1,12 @@
-import Navbar from "@/components/Navbar";
-
 export default function Hero() {
   return (
-    <section className="relative h-screen overflow-hidden">
+    <section className="relative min-h-screen overflow-hidden flex items-center">
 
-      {/* VIDEO */}
       <video
         autoPlay
         muted
         loop
         playsInline
-        preload="metadata"
         className="absolute inset-0 w-full h-full object-cover"
       >
         <source
@@ -19,62 +15,54 @@ export default function Hero() {
         />
       </video>
 
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-[#2b1d0e]/35" />
+      <div className="absolute inset-0 bg-black/45" />
 
-      {/* NAVBAR */}
-      <Navbar />
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-32 w-full">
 
-      {/* CONTENT */}
-      <div className="relative z-10 h-full flex items-center">
+        <div className="max-w-3xl">
 
-        <div className="max-w-7xl mx-auto px-6 w-full">
+          <p className="uppercase tracking-[0.3em] text-sm text-[#f4d28c] mb-6">
 
-          <div className="max-w-4xl">
+            Casa Apícola Los Cerezos
 
-            <p className="uppercase tracking-[0.4em] text-sm text-[#f4d18b] mb-6">
-              Caldas, Boyacá · Colombia
-            </p>
+          </p>
 
-            <h1 className="text-5xl md:text-7xl leading-tight text-white mb-8">
+          <h1 className="text-5xl md:text-6xl leading-tight text-white mb-8">
 
-              Pureza y tradición
-              <br />
-              en cada cosecha.
+            Miel artesanal colombiana con tradición familiar
 
-            </h1>
+          </h1>
 
-            <p className="text-lg md:text-2xl text-[#f4e7cf] leading-relaxed max-w-2xl mb-10">
+          <p className="text-lg md:text-xl text-white/85 leading-relaxed mb-10 max-w-2xl">
 
-              Más de 30 años dedicados a la apicultura,
-              la enseñanza y el cuidado responsable de las abejas.
+            Más de 30 años de experiencia apícola en Boyacá,
+            produciendo miel natural, polen y productos
+            artesanales con respeto por las abejas,
+            la naturaleza y el campo colombiano.
 
-            </p>
+          </p>
 
-            <div className="flex flex-wrap gap-5">
+          <div className="flex flex-wrap gap-5">
 
-              <a
-                href="/consumo"
-                className="bg-[#c98b2e] hover:bg-[#b67c28] transition px-8 py-4 rounded-full text-white font-semibold shadow-2xl"
-              >
-                Ver productos
-              </a>
+            <a
+              href="#productos"
+              className="bg-[#c98b2e] hover:bg-[#b67c28] transition px-8 py-4 rounded-full text-white font-semibold shadow-xl"
+            >
+              Ver productos
+            </a>
 
-              <a
-                href="/servicios"
-                className="border border-white/40 hover:bg-white/10 transition px-8 py-4 rounded-full text-white font-semibold"
-              >
-                Conocer historia
-              </a>
-
-            </div>
+            <a
+              href="/historia"
+              className="border border-white/40 hover:bg-white/10 transition px-8 py-4 rounded-full text-white font-semibold"
+            >
+              Nuestra historia
+            </a>
 
           </div>
-        </div>
-      </div>
 
-      {/* FADE */}
-      <div className="absolute bottom-0 left-0 w-full h-40 bg-gradient-to-t from-[#f7f1e8] to-transparent" />
+        </div>
+
+      </div>
 
     </section>
   );

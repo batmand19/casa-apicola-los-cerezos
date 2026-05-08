@@ -3,11 +3,15 @@
 import { useState } from "react";
 
 import ProductCard from "./ProductCard";
+
 import ProductFilters from "./ProductFilters";
 
-import { products } from "@/data/products";
+import { useProducts } from "@/context/ProductContext";
 
 export default function ProductGrid() {
+
+  const { products } = useProducts();
+
   const [active, setActive] =
     useState("all");
 

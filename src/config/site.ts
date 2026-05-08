@@ -1,24 +1,59 @@
 export const siteConfig = {
-  name: "Casa Apícola Los Cerezos",
+  brand: {
+    name:
+      "Casa Apícola Los Cerezos",
 
-  slogan:
-    "Pureza y tradición en cada cosecha.",
+    slogan:
+      "Pureza y tradición en cada cosecha.",
 
-  description:
-    "Más de 30 años dedicados a la apicultura artesanal y la enseñanza en Boyacá.",
+    description:
+      "Miel 100% natural, artesanal y colombiana. Más de 30 años de tradición apícola familiar en Boyacá.",
 
-  location:
-    "Caldas, Boyacá · Colombia",
+    founded:
+      "1990",
+  },
 
-  whatsapp:
-    process.env.NEXT_PUBLIC_WHATSAPP,
+  contact: {
+    whatsapp:
+      "573208065008",
 
-  email:
-    "contacto@casaapicolaloscerezos.com",
+    calls:
+      "573108141518",
 
-  instagram:
-    "https://instagram.com/",
+    email:
+      "danielcanon044@gmail.com",
 
-  facebook:
-    "https://facebook.com/",
+    location:
+      "Caldas, Boyacá · Colombia",
+
+    schedule:
+      "Lunes a sábado · Horario de oficina",
+  },
+
+  social: {
+    instagram: "",
+
+    facebook: "",
+  },
+
+  commerce: {
+    nationalShipping: true,
+
+    paymentMethods: [
+      "Nequi",
+      "Bancolombia",
+      "Transferencia",
+    ],
+
+    customShipping:
+      true,
+
+    whatsappDefaultMessage:
+      "Hola, quiero información sobre los productos de Casa Apícola Los Cerezos.",
+  },
+
+  owner: {
+    father:
+      "Héctor Salvador Cañon",
+  },
 };

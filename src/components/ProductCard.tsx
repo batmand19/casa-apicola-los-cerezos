@@ -1,62 +1,85 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
 
+import Image from "next/image";
+
+import { useState } from "react";
+
+import BuyModal from "./BuyModal";
+
+import { Product } from "@/types/product";
+
 interface ProductCardProps {
-  product: {
-    slug: string;
-    name: string;
-    image: string;
-    shortDescription: string;
-    price: string;
-  };
+  product: Product;
 }
 
 export default function ProductCard({
   product,
 }: ProductCardProps) {
+
+  const [open, setOpen] =
+    useState(false);
+
   return (
-    <div className="group bg-white rounded-[32px] overflow-hidden shadow-lg hover:shadow-2xl transition duration-500 hover:-translate-y-2">
+    <>
+      <div className="group flex flex-col h-full bg-white rounded-[32px] overflow-hidden shadow-lg hover:shadow-2xl transition">
 
-      {/* IMAGE */}
-      <div className="relative h-72 overflow-hidden">
+        <Link
+          href={`/productos/${product.slug}`}
+        >
 
-        <Image
-          src={product.image}
-          alt={product.name}
-          fill
-          loading="lazy"
-          className="object-cover group-hover:scale-105 transition duration-700"
-        />
+          <div className="relative h-80 overflow-hidden">
 
-        <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-      </div>
+            <Image
+              src={product.image}
+              alt={product.name}
+              fill
+              className="object-cover group-hover:scale-105 transition duration-500"
+            />
 
-      {/* CONTENT */}
-      <div className="p-8">
+          </div>
 
-        <h3 className="text-3xl mb-4">
-          {product.name}
-        </h3>
+        </Link>
 
-        <p className="text-[#4b3a2c] leading-relaxed mb-8">
-          {product.shortDescription}
-        </p>
+        <div className="p-8 flex flex-col flex-1">
 
-        <div className="flex items-center justify-between">
+          <p className="uppercase tracking-[0.2em] text-xs text-[#8b5e34] mb-3">
+            {product.category}
+          </p>
 
-          <span className="text-xl font-semibold">
-            {product.price}
-          </span>
+          <h3 className="text-3xl mb-4">
+            {product.name}
+          </h3>
 
-          <Link
-            href={`/productos/${product.slug}`}
-            className="bg-[#c98b2e] hover:bg-[#b67c28] transition px-6 py-3 rounded-full text-white font-medium"
+          <p className="text-[#4b3a2c] leading-relaxed mb-6 flex-1">
+            {product.shortDescription}
+          </p>
+
+          <div className="flex items-center justify-between mb-6">
+
+            <span className="text-xl font-semibold text-[#2c2218]">
+              {product.price}
+            </span>
+
+          </div>
+
+          <button
+            onClick={() => setOpen(true)}
+            className="w-full bg-[#c98b2e] hover:bg-[#b67c28] transition text-white py-4 rounded-full font-semibold"
           >
-            Ver más
-          </Link>
+            Comprar
+          </button>
 
         </div>
+
       </div>
-    </div>
+
+      <BuyModal
+        open={open}
+        onClose={() => setOpen(false)}
+        message={product.whatsappMessage}
+      />
+    </>
   );
 }
