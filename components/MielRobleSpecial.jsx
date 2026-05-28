@@ -1,10 +1,19 @@
 'use client';
 
+import { useState } from 'react';
 import OptimizedImage from './OptimizedImage';
 import WhatsAppOrderButton from './WhatsAppOrderButton';
 import EmailOrderButton from './EmailOrderButton';
 
+const SIZES = [
+  { label: '500g', price: 40000 },
+  { label: '1kg', price: 75000 },
+];
+
 export default function MielRobleSpecial() {
+  const [selectedSize, setSelectedSize] = useState('500g');
+  const selectedPrice = SIZES.find((s) => s.label === selectedSize)?.price || 40000;
+
   return (
     <section className="relative overflow-hidden" aria-labelledby="roble-title">
       {/* Fondo premium oscuro */}
@@ -56,23 +65,39 @@ export default function MielRobleSpecial() {
               ))}
             </div>
 
-            {/* Precios */}
-            <div className="flex items-end gap-6 mb-8">
-              <div>
-                <p className="text-xs text-cream-300/40 mb-1">500g</p>
-                <p className="font-display text-2xl font-bold text-cream-100">$40.000</p>
+            {/* Selector de presentación */}
+            <div className="mb-6">
+              <p className="text-xs font-semibold text-cream-300/50 uppercase tracking-wider mb-3">Presentación</p>
+              <div className="flex gap-3" role="radiogroup" aria-label="Tamaño del producto">
+                {SIZES.map((size) => (
+                  <button
+                    key={size.label}
+                    onClick={() => setSelectedSize(size.label)}
+                    className={`flex-1 px-5 py-3.5 rounded-xl text-center border transition-all duration-300 ${
+                      selectedSize === size.label
+                        ? 'border-honey-400 bg-honey-500/10 text-cream-100 shadow-lg shadow-honey-500/10'
+                        : 'border-cream-300/10 bg-white/5 text-cream-300/60 hover:border-cream-300/30'
+                    }`}
+                    role="radio"
+                    aria-checked={selectedSize === size.label}
+                  >
+                    <span className="block text-sm font-bold">{size.label}</span>
+                    <span className="block text-[11px] mt-0.5 text-cream-300/40">${size.price.toLocaleString('es-CO')}</span>
+                  </button>
+                ))}
               </div>
-              <div>
-                <p className="text-xs text-cream-300/40 mb-1">1kg</p>
-                <p className="font-display text-2xl font-bold text-cream-100">$75.000</p>
-              </div>
-              <span className="text-xs text-cream-3000/30 mb-1">COP</span>
+            </div>
+
+            {/* Precio */}
+            <div className="flex items-end gap-3 mb-8">
+              <span className="font-display text-3xl sm:text-4xl font-bold text-cream-100">${selectedPrice.toLocaleString('es-CO')}</span>
+              <span className="text-sm text-cream-300/40 mb-1">COP</span>
             </div>
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <WhatsAppOrderButton productName="Néctar de Roble" size="500g" price={40000} type="physical" className="btn-whatsapp flex-1" />
-              <EmailOrderButton productName="Néctar de Roble" size="500g" price={40000} type="physical" className="btn-email flex-1" />
+              <WhatsAppOrderButton productName="Néctar de Roble" size={selectedSize} price={selectedPrice} type="physical" className="btn-whatsapp flex-1" />
+              <EmailOrderButton productName="Néctar de Roble" size={selectedSize} price={selectedPrice} type="physical" className="btn-email flex-1" />
             </div>
           </div>
         </div>
