@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
-import Image from 'next/image';
+import OptimizedImage from './OptimizedImage';
 import { trackView, trackViewProduct, trackSelectVariant } from '@/lib/tracking';
 import WhatsAppOrderButton from './WhatsAppOrderButton';
 import EmailOrderButton from './EmailOrderButton';
@@ -46,9 +46,8 @@ function ProductCard({ product }) {
   return (
     <article id={`product-${product.id}`} className="card-premium overflow-hidden group">
       <div className="relative aspect-[4/3] bg-gradient-to-br from-cream-200 to-earth-100 overflow-hidden">
-        <Image src={currentImage} alt={`${product.name} - ${selectedSize}`} fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-        {product.badge && <span className="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold tracking-[0.15em] uppercase text-white bg-earth-800/80 backdrop-blur-sm rounded-full">{product.badge}</span>}
-        <div className="absolute inset-0 img-placeholder"><div className="text-center p-6"><span className="text-5xl block mb-3" role="img" aria-label={product.name}>{product.category === 'Miel' ? '🍯' : '🌼'}</span><p className="text-sm text-earth-500">{product.name}</p><code className="text-[10px] text-earth-400/60 block mt-1">{currentImage}</code></div></div>
+        <OptimizedImage src={currentImage} alt={`${product.name} - ${selectedSize}`} aspect="4/3" fallbackIcon={product.category === 'Miel' ? '🍯' : '🌼'} fallbackLabel={product.name} />
+        {product.badge && <span className="absolute top-4 left-4 px-3 py-1 text-[10px] font-bold tracking-[0.15em] uppercase text-white bg-earth-800/80 backdrop-blur-sm rounded-full z-10">{product.badge}</span>}
       </div>
 
       <div className="p-6 sm:p-8">

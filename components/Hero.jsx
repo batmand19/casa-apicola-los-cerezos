@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import { trackView, trackClick } from '@/lib/tracking';
+import OptimizedImage from './OptimizedImage';
 
 function HoneyWave({ from = '#221c15', to = '#faf8f4', flip = false }) {
   return (
@@ -34,9 +35,9 @@ export default function Hero() {
           <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-honey-500/6 rounded-full blur-[150px] animate-breathe" />
           <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-forest-500/5 rounded-full blur-[120px]" />
-          {/* Placeholder — /images/hero-apiario.jpg */}
-          <div className="absolute inset-0 img-placeholder opacity-15">
-            <div className="text-center"><span className="text-7xl block mb-4 opacity-40">🍯</span><p className="text-xs text-earth-500/40">/images/hero-apiario.jpg</p></div>
+          {/* Imagen de fondo hero */}
+          <div className="absolute inset-0">
+            <OptimizedImage src="/images/hero-apiario.jpg" alt="Apiario en las montañas de Caldas" aspect="16/9" fallbackIcon="🍯" fallbackLabel="Apiario" priority />
           </div>
         </div>
 

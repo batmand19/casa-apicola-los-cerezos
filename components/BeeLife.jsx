@@ -1,5 +1,6 @@
 'use client';
 
+import OptimizedImage from './OptimizedImage';
 const GALLERY = [
   { src: '/images/padre-colmena-01.jpg', alt: 'Salvador Cañón trabajando en las colmenas al amanecer', caption: 'Cada mañana, el padre revisa las colmenas', span: 'sm:col-span-2 sm:row-span-2' },
   { src: '/images/extraccion-miel-01.jpg', alt: 'Extracción artesanal de miel', caption: 'Extracción sin prisa', span: '' },
@@ -33,11 +34,12 @@ export default function BeeLife() {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {GALLERY.map((item, i) => (
             <figure key={i} className={`relative rounded-2xl overflow-hidden shadow-lg group ${item.span} aspect-[4/3]`}>
-              <div className="absolute inset-0 bg-gradient-to-br from-cream-200 to-earth-100"><div className="absolute inset-0 img-placeholder"><div className="text-center p-4"><span className="text-2xl block mb-1">📸</span><code className="text-[9px] text-earth-500/60">{item.src}</code></div></div></div>
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700"><p className="text-sm font-medium text-white">{item.caption}</p></div>
+              <OptimizedImage src={item.src} alt={item.alt} aspect="4/3" fallbackIcon="📸" fallbackLabel="Foto del apiario" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
+              <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-4 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-700 z-10"><p className="text-sm font-medium text-white drop-shadow-md">{item.caption}</p></div>
             </figure>
           ))}
+        </div>
         </div>
 
         {/* Segundo video */}

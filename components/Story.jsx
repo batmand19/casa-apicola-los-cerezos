@@ -1,13 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
-import Image from 'next/image';
+import OptimizedImage from './OptimizedImage';
 import { trackView, trackClick } from '@/lib/tracking';
 
 const fotos = [
   { src: '/images/padre-colmena-01.jpg', alt: 'Nuestro padre trabajando en las colmenas de Caldas', caption: 'Más de 30 años cuidando abejas' },
-  { src: '/images/cosecha-miel-familiar.jpg', alt: 'La familia cosechando miel artesanal', caption: 'Tradición de familia' },
-  { src: '/images/flor-arrayan-boyaca.jpg', alt: 'Flor de Arrayán del Páramo de Rabanal', caption: 'Flora del Páramo' },
+  { src: '/images/padre-colmena-02.jpg', alt: 'La familia cosechando miel artesanal', caption: 'Tradición de familia' },
+  { src: '/images/extraccion-miel-01.jpg', alt: 'Flor de Arrayán del Páramo de Rabanal', caption: 'Flora del Páramo' },
 ];
 
 const milestones = [
@@ -123,17 +123,15 @@ export default function Story() {
           {/* Galería */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group" aria-label="Galería de fotos">
             <figure className="sm:col-span-2 relative aspect-[16/10] rounded-2xl overflow-hidden shadow-xl group">
-              <Image src={fotos[0].src} alt={fotos[0].alt} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              <div className="absolute bottom-4 left-4"><figcaption className="text-sm font-medium text-white">{fotos[0].caption}</figcaption></div>
-              <div className="absolute inset-0 img-placeholder"><div className="text-center p-4"><span className="text-3xl block mb-2">👨‍🌾</span><code className="text-[10px] text-earth-500/60">{fotos[0].src}</code></div></div>
+              <OptimizedImage src={fotos[0].src} alt={fotos[0].alt} aspect="16/10" fallbackIcon="👨‍🌾" fallbackLabel="Foto de la historia" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent z-10" />
+              <div className="absolute bottom-4 left-4 z-10"><figcaption className="text-sm font-medium text-white drop-shadow-md">{fotos[0].caption}</figcaption></div>
             </figure>
             {fotos.slice(1).map((foto, i) => (
               <figure key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
-                <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 100vw, 300px" className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <div className="absolute bottom-3 left-3"><span className="text-xs font-medium text-white">{foto.caption}</span></div>
-                <div className="absolute inset-0 img-placeholder"><div className="text-center p-3"><span className="text-2xl block mb-1">📸</span><code className="text-[9px] text-earth-500/60">{foto.src}</code></div></div>
+                <OptimizedImage src={foto.src} alt={foto.alt} aspect="4/3" fallbackIcon="📸" fallbackLabel="Foto de la historia" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10" />
+                <div className="absolute bottom-3 left-3 z-10"><span className="text-xs font-medium text-white drop-shadow-md">{foto.caption}</span></div>
               </figure>
             ))}
           </div>

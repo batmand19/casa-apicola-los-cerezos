@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ARTICLES } from '@/data/articles';
 import { articleSchema, breadcrumbSchema } from '@/lib/schema';
+import BlogArticleImage from '@/components/BlogArticleImage';
 
 const SITE_URL = 'https://casapicolaloscercez.com';
 
@@ -133,13 +134,7 @@ export default function ArticlePage({ params }) {
 
           {/* Imagen destacada */}
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10 bg-gradient-to-br from-miel-100 to-miel-200">
-            <div className="absolute inset-0 img-placeholder">
-              <div className="text-center p-6">
-                <span className="text-4xl" aria-hidden="true">📸</span>
-                <p className="mt-3 text-sm text-miel-700">{article.imageAlt}</p>
-                <code className="text-[10px] text-miel-800/60 block mt-1">{article.image}</code>
-              </div>
-            </div>
+            <BlogArticleImage src={article.image} alt={article.imageAlt} category={article.category} />
           </div>
 
           {/* Contenido */}

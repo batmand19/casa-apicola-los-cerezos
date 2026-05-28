@@ -1,5 +1,6 @@
 'use client';
 
+import OptimizedImage from './OptimizedImage';
 export default function NuestroEntorno() {
   return (
     <section className="relative overflow-hidden" aria-labelledby="environment-title">
@@ -12,14 +13,8 @@ export default function NuestroEntorno() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Imagen */}
           <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-            <div className="absolute inset-0 img-placeholder bg-gradient-to-br from-forest-700 to-forest-800">
-              <div className="text-center p-8">
-                <span className="text-5xl block mb-3 opacity-60">🏔️</span>
-                <p className="text-sm text-cream-300/50">/images/entorno-montanas.jpg</p>
-                <p className="text-xs text-cream-300/30 mt-1">Montañas de Caldas-Boyacá al amanecer</p>
-              </div>
-            </div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+            <OptimizedImage src="/images/entorno-montanas.jpg" alt="Montañas de Caldas-Boyacá al amanecer" aspect="4/3" fallbackIcon="🏔️" fallbackLabel="Montañas de Caldas" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent z-10" />
           </div>
 
           {/* Texto */}

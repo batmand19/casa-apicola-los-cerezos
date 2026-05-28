@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { ARTICLES } from '@/data/articles';
 import { websiteSchema, breadcrumbSchema } from '@/lib/schema';
+import BlogArticleImage from '@/components/BlogArticleImage';
 
 const SITE_URL = 'https://casapicolaloscercez.com';
 
@@ -47,15 +48,9 @@ export default function BlogPage() {
             >
               {/* Imagen */}
               <div className="relative aspect-[16/10] bg-gradient-to-br from-miel-100 to-miel-200 overflow-hidden">
-                <div className="absolute inset-0 img-placeholder">
-                  <div className="text-center p-4">
-                    <span className="text-3xl" aria-hidden="true">📝</span>
-                    <p className="mt-2 text-xs text-miel-700">{article.category}</p>
-                    <code className="text-[10px] text-miel-800/60 block mt-1">{article.image}</code>
-                  </div>
-                </div>
+                <BlogArticleImage src={article.image} alt={article.imageAlt} category={article.category} />
                 {/* Badge de categoría */}
-                <span className="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-miel-600 rounded-full">
+                <span className="absolute top-3 left-3 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-white bg-miel-600 rounded-full z-10">
                   {article.category}
                 </span>
               </div>

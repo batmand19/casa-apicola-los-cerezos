@@ -1,5 +1,6 @@
 'use client';
 
+import OptimizedImage from './OptimizedImage';
 import WhatsAppOrderButton from './WhatsAppOrderButton';
 import EmailOrderButton from './EmailOrderButton';
 
@@ -15,17 +16,11 @@ export default function MielRobleSpecial() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           {/* Imagen premium */}
           <div className="relative aspect-square max-w-md mx-auto lg:mx-0 rounded-3xl overflow-hidden shadow-2xl shadow-black/30">
-            <div className="absolute inset-0 bg-gradient-to-br from-honey-800/40 to-earth-900/60" />
-            <div className="absolute inset-0 img-placeholder bg-gradient-to-br from-honey-700/30 to-earth-800/50">
-              <div className="text-center p-8">
-                <span className="text-6xl block mb-4 opacity-50">🍯</span>
-                <p className="text-sm text-honey-300/40">/images/productos/miel-roble.jpg</p>
-                <p className="text-xs text-honey-300/20 mt-1">Close-up de miel de roble, ámbar oscuro</p>
-              </div>
-            </div>
-            <div className="absolute top-4 left-4 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-honey-300 bg-earth-900/60 backdrop-blur-sm rounded-full border border-honey-500/20">
+            <OptimizedImage src="/images/productos/miel-roble.jpg" alt="Miel de Roble - ámbar oscuro" aspect="1/1" fallbackIcon="🍯" fallbackLabel="Miel de Roble" />
+            <div className="absolute top-4 left-4 px-3 py-1.5 text-[10px] font-bold tracking-[0.2em] uppercase text-honey-300 bg-earth-900/60 backdrop-blur-sm rounded-full border border-honey-500/20 z-10">
               Edición exclusiva
             </div>
+          </div>
           </div>
 
           {/* Contenido */}
