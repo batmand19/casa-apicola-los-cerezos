@@ -2,13 +2,14 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
+import ImageLightbox from './ImageLightbox';
 
 /**
- * Imagen de artículo del blog con fallback agradecido.
- * Maneja carga y errores de forma elegante.
+ * Imagen de artículo del blog con fallback y lightbox al clickear.
  */
 export default function BlogArticleImage({ src, alt, category }) {
   const [imgError, setImgError] = useState(false);
+  const [showLightbox, setShowLightbox] = useState(false);
 
   if (imgError) {
     return (
@@ -30,9 +31,19 @@ export default function BlogArticleImage({ src, alt, category }) {
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
         quality={80}
-        className="object-cover transition-opacity duration-500 hover:opacity-90"
+        className="object-cover transition-opacity duration-500 hover:opacity-90 cursor-pointer"
         onError={() => setImgError(true)}
+        onClick={() => setShowLightbox(true)}
       />
+
+      {showLightbox && (
+        <ImageLightbox
+          src={src}
+          alt={alt}
+          caption={category}
+          onClose={() => setShowLightbox(false)}
+        />
+      )}
     </>
   );
 }
