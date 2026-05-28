@@ -1,52 +1,12 @@
 'use client';
 
-import { useState } from 'react';
-import { trackNewsletterSignup } from '@/lib/tracking';
-
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const [email, setEmail] = useState('');
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleNewsletterSubmit = (e) => {
-    e.preventDefault();
-    if (!email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return;
-    const data = { email: email.trim(), source: 'footer_newsletter', timestamp: new Date().toISOString() };
-    console.log('[Newsletter Footer]', data);
-    try { const existing = JSON.parse(sessionStorage.getItem('cerezos_newsletter') || '[]'); existing.push(data); sessionStorage.setItem('cerezos_newsletter', JSON.stringify(existing)); } catch {}
-    trackNewsletterSignup(email.trim(), 'footer');
-    setSubmitted(true);
-  };
 
   return (
-    <footer className="bg-earth-900 text-cream-300 pt-20 pb-8" role="contentinfo">
+    <footer className="bg-earth-900 text-cream-300 pt-16 pb-8" role="contentinfo">
       <div className="max-w-6xl mx-auto px-5 sm:px-8">
-        {/* Newsletter premium */}
-        <div className="mb-16 p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-earth-800 to-earth-900 border border-earth-700/50">
-          <div className="max-w-xl mx-auto text-center">
-            <span className="text-3xl block mb-4">🍯</span>
-            <h3 className="font-display text-xl sm:text-2xl font-bold text-cream-100 mb-2">
-              Únete a nuestra colmena
-            </h3>
-            <p className="text-sm text-cream-400/70 mb-6">
-              Recibe recetas, beneficios y ofertas exclusivas. 10% de descuento en tu primera compra.
-            </p>
-            {!submitted ? (
-              <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Tu correo electrónico" required className="flex-1 px-5 py-3.5 text-sm bg-earth-700/50 border border-earth-600/50 rounded-full text-cream-100 placeholder-cream-500/40 focus:border-honey-500 focus:ring-0 outline-none transition-colors min-h-[48px]" />
-                <button type="submit" className="px-6 py-3.5 text-sm font-semibold text-earth-900 bg-honey-400 hover:bg-honey-300 rounded-full transition-all duration-300 min-h-[48px] whitespace-nowrap">
-                  Obtener 10%
-                </button>
-              </form>
-            ) : (
-              <p className="text-sm text-honey-400 font-medium">¡Gracias! Revisa tu correo para tu código de descuento.</p>
-            )}
-          </div>
-        </div>
-
-        {/* Grid principal */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-12">
-          {/* Marca */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 rounded-full bg-gradient-to-br from-honey-400 to-honey-600 flex items-center justify-center text-white text-sm shadow-md">🍯</div>
@@ -55,9 +15,7 @@ export default function Footer() {
                 <span className="block text-[10px] font-medium tracking-[0.15em] uppercase text-honey-400">Los Cerezos</span>
               </div>
             </div>
-            <p className="text-sm text-cream-400/60 leading-relaxed max-w-xs">
-              Miel pura y polen de abejas Meliphera, cosechados en las montañas de Caldas.
-            </p>
+            <p className="text-sm text-cream-400/60 leading-relaxed max-w-xs">Miel pura y polen de abejas Apis mellifera, cosechados en las montañas de Caldas. Más de 30 años de tradición.</p>
             <div className="flex gap-3 mt-5">
               <a href="https://instagram.com/casapicolaloscercez" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-full bg-earth-800 hover:bg-honey-600 flex items-center justify-center transition-colors duration-300" aria-label="Instagram">
                 <svg className="w-4 h-4 text-cream-300" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" /></svg>
@@ -71,7 +29,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Navegación */}
           <nav aria-label="Navegación">
             <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-cream-200 mb-4">Navegación</h4>
             <ul className="space-y-2.5 text-sm">
@@ -82,7 +39,6 @@ export default function Footer() {
             </ul>
           </nav>
 
-          {/* Recursos */}
           <div>
             <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-cream-200 mb-4">Recursos</h4>
             <ul className="space-y-2.5 text-sm">
@@ -92,19 +48,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Ubicación */}
           <div>
             <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-cream-200 mb-4">Ubicación</h4>
-            <p className="text-sm text-cream-400/60 leading-relaxed">
-              Montañas de Caldas, cerca al límite con Boyacá. Zona de amortiguamiento del Páramo de Rabanal. Región cundiboyacense, Colombia.
-            </p>
+            <p className="text-sm text-cream-400/60 leading-relaxed">Montañas de Caldas, cerca al límite con Boyacá. Zona de amortiguamiento del Páramo de Rabanal. Región cundiboyacense, Colombia.</p>
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="pt-8 border-t border-earth-800 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-cream-500/40">&copy; {currentYear} Casa Apícola Los Cerezos. Todos los derechos reservados.</p>
-          <p className="text-xs text-cream-500/40">Apicultura sostenible &middot; Caldas-Boyacá</p>
+          <p className="text-xs text-cream-500/40">Apicultura sostenible &middot; Caldas-Boyacá &middot; Más de 30 años</p>
         </div>
       </div>
     </footer>
