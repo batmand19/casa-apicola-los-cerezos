@@ -104,7 +104,7 @@ export default function ArticlePage({ params }) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLD) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLD) }} />
 
-      <article className="py-12 sm:py-16 md:py-24 bg-white">
+      <article className="py-12 sm:py-16 md:py-24 bg-miel-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Breadcrumb */}
           <nav className="mb-8 text-sm text-tierra-700/60" aria-label="Breadcrumb">

@@ -21,7 +21,7 @@ export const metadata = {
 
 export default function BlogPage() {
   return (
-    <section className="py-12 sm:py-16 md:py-24 bg-miel-50 min-h-screen">
+    <section className="py-12 sm:py-16 md:py-24 bg-miel-50 min-h-screen paper-texture">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Encabezado */}
         <div className="text-center mb-12">
@@ -43,7 +43,7 @@ export default function BlogPage() {
             <Link
               key={article.slug}
               href={`/blog/${article.slug}`}
-              className="group bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-miel-100 flex flex-col"
+              className="group bg-miel-50 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden border border-miel-200 flex flex-col"
             >
               {/* Imagen */}
               <div className="relative aspect-[16/10] bg-gradient-to-br from-miel-100 to-miel-200 overflow-hidden">

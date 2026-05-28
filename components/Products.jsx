@@ -33,8 +33,12 @@ const FREE_SHIPPING_THRESHOLD = 100000;
 function ProductCard({ product }) {
   const [selectedSize, setSelectedSize] = useState(product.sizes[0].label);
   const [currentImage, setCurrentImage] = useState(product.image);
+  const [quantity, setQuantity] = useState(1);
   const selectedPrice = product.sizes.find((s) => s.label === selectedSize)?.price || 0;
   const qualifiesForFreeShipping = selectedPrice >= FREE_SHIPPING_THRESHOLD;
+
+  const increaseQty = () => setQuantity((q) => Math.min(q + 1, 10));
+  const decreaseQty = () => setQuantity((q) => Math.max(q - 1, 1));
 
   useEffect(() => { trackViewProduct({ id: product.id, name: product.name, category: product.category, size: selectedSize, price: selectedPrice }); }, [product.id, product.name, product.category, selectedSize, selectedPrice, product]);
   const handleSizeChange = useCallback((newSize) => { if (newSize !== selectedSize) { trackSelectVariant({ productId: product.id, productName: product.name, oldSize: selectedSize, newSize, price: product.sizes.find((s) => s.label === newSize)?.price || 0 }); setSelectedSize(newSize); if (product.images[newSize]) setCurrentImage(product.images[newSize]); } }, [selectedSize, product]);
@@ -76,6 +80,31 @@ function ProductCard({ product }) {
           </div>
         </div>
 
+        {/* Selector de cantidad */}
+        <div className="mb-5">
+          <p className="text-xs font-semibold text-earth-600 uppercase tracking-wider mb-3">Cantidad</p>
+          <div className="flex items-center gap-3">
+            <button
+              onClick={decreaseQty}
+              disabled={quantity <= 1}
+              className="w-11 h-11 flex items-center justify-center rounded-xl border border-cream-300 bg-white text-earth-700 font-bold text-lg transition-all duration-200 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed hover:border-honey-400"
+              aria-label="Reducir cantidad"
+            >
+              −
+            </button>
+            <span className="w-12 text-center text-lg font-bold text-earth-900 tabular-nums" aria-live="polite" aria-label="Cantidad actual">{quantity}</span>
+            <button
+              onClick={increaseQty}
+              disabled={quantity >= 10}
+              className="w-11 h-11 flex items-center justify-center rounded-xl border border-cream-300 bg-white text-earth-700 font-bold text-lg transition-all duration-200 active:scale-95 disabled:opacity-40 disabled:cursor-not-allowed hover:border-honey-400"
+              aria-label="Aumentar cantidad"
+            >
+              +
+            </button>
+            <span className="text-sm text-earth-400">{quantity > 1 ? `$${(selectedPrice * quantity).toLocaleString('es-CO')} total` : ''}</span>
+          </div>
+        </div>
+
         <div className="flex items-end gap-2 mb-4"><span className="price-highlight">${selectedPrice.toLocaleString('es-CO')}</span><span className="text-sm text-earth-400 mb-1">COP</span></div>
 
         <div className="flex flex-wrap items-center gap-2 mb-6">
@@ -86,8 +115,8 @@ function ProductCard({ product }) {
         <TrustBadges />
 
         <div className="mt-6 space-y-3">
-          <WhatsAppOrderButton productName={product.name} size={selectedSize} price={selectedPrice} type="physical" className="btn-whatsapp w-full" />
-          <EmailOrderButton productName={product.name} size={selectedSize} price={selectedPrice} type="physical" className="btn-email w-full" />
+          <WhatsAppOrderButton productName={product.name} size={selectedSize} price={selectedPrice} quantity={quantity} type="physical" className="btn-whatsapp w-full" />
+          <EmailOrderButton productName={product.name} size={selectedSize} price={selectedPrice} quantity={quantity} type="physical" className="btn-email w-full" />
           <p className="text-[11px] text-earth-400 text-center">Te contactaremos para confirmar disponibilidad y envío.</p>
         </div>
 
