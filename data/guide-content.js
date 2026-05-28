@@ -1,0 +1,463 @@
+/**
+ * Contenido de la "Guía de Recetas y Usos de la Miel Meliphera"
+ * Sabores de Colmena — Casa Apícola Los Cerezos
+ *
+ * Este archivo contiene el contenido completo de la guía.
+ * Puede exportarse a PDF/EPUB usando herramientas como:
+ * - Canva (diseño visual)
+ * - Pandoc (conversión markdown → PDF/EPUB)
+ * - Calibre (conversión a EPUB)
+ * - Adobe InDesign (diseño profesional)
+ */
+
+export const GUIDE = {
+  title: 'Sabores de Colmena',
+  subtitle: 'Recetas y usos de la miel Meliphera',
+  author: 'Casa Apícola Los Cerezos',
+  edition: 'Primera edición — 2026',
+  location: 'Montañas de Caldas, Colombia',
+
+  intro: `La miel Meliphera es un tesoro natural de las montañas de Caldas-Boyacá. Producida por abejas nativas sin aguijón que recolectan néctar de Eucalipto, Romero, Salvia, Uva de anís y Arrayán, esta miel tiene un sabor único: dulzor equilibrado con notas florales, toques herbáceos y un fondo sutil a eucalipto.
+
+En esta guía encontrarás 25 recetas fáciles, usos medicinales y de belleza, y todo lo que necesitas para aprovechar al máximo cada frasco de nuestra miel artesanal.`,
+
+  chapters: [
+    {
+      number: 1,
+      title: 'Recetas de desayuno',
+      recipes: [
+        {
+          name: 'Panqueques esponjosos con miel',
+          time: '15 min',
+          servings: '4 porciones',
+          ingredients: [
+            '2 tazas de harina de trigo',
+            '2 huevos',
+            '1 taza de leche',
+            '2 cucharadas de mantequilla derretida',
+            '1 cucharadita de polvo de hornear',
+            'Miel Meliphera al gusto',
+            'Frutas frescas (fresas, banano, arándanos)',
+          ],
+          steps: [
+            'Mezclar la harina, el polvo de hornear y una pizca de sal en un tazón.',
+            'En otro tazón, batir los huevos con la leche y la mantequilla derretida.',
+            'Combinar los ingredientes secos y húmedos, mezclando suavemente hasta integrar.',
+            'Cocinar en sartén caliente con un poco de mantequilla, 2 minutos por lado.',
+            'Servir con frutas frescas y un generoso chorrito de miel Meliphera.',
+          ],
+          tip: 'La miel cristalizada se derrite perfectamente sobre los panqueques calientes.',
+        },
+        {
+          name: 'Avena cremosa con miel y nueces',
+          time: '10 min',
+          servings: '2 porciones',
+          ingredients: [
+            '1 taza de avena en hojuelas',
+            '2 tazas de leche (o leche de almendras)',
+            '1 cucharada de miel Meliphera',
+            '¼ taza de nueces picadas',
+            '1 cucharadita de canela',
+            'Frutas al gusto',
+          ],
+          steps: [
+            'Calentar la leche en olla a fuego medio.',
+            'Agregar la avena y cocinar 5-7 minutos, revolviendo frecuentemente.',
+            'Retirar del fuego y agregar la canela.',
+            'Servir en bowls y coronar con miel, nueces y frutas.',
+          ],
+          tip: 'Prepara la noche anterior (overnight oats): mezcla todo en un frasco y refrigera.',
+        },
+        {
+          name: 'Yogur griego con miel y granola',
+          time: '3 min',
+          servings: '1 porción',
+          ingredients: [
+            '1 taza de yogur griego natural',
+            '2 cucharadas de miel Meliphera',
+            '¼ taza de granola',
+            'Frutas frescas al gusto',
+          ],
+          steps: [
+            'Colocar el yogur en un bowl.',
+            'Añadir la granola y las frutas.',
+            'Coronar con un chorrito generoso de miel.',
+          ],
+          tip: 'Para un desayuno completo, agrega 1 cucharada de semillas de chía.',
+        },
+        {
+          name: 'Tostadas de aguacate con miel y queso',
+          time: '5 min',
+          servings: '2 porciones',
+          ingredients: [
+            '4 rebanadas de pan integral',
+            '1 aguacate maduro',
+            'Queso fresco o ricotta',
+            '1 cucharada de miel Meliphera',
+            'Sal, pimienta y semillas de sésamo',
+          ],
+          steps: [
+            'Tostar el pan hasta que esté dorado.',
+            'Untar el aguacate machacado sobre cada rebanada.',
+            'Agregar un poco de queso fresco.',
+            'Rociar con miel y espolvorear semillas de sésamo.',
+          ],
+          tip: 'El contraste entre el aguacate salado y la miel dulce es irresistibly.',
+        },
+      ],
+    },
+    {
+      number: 2,
+      title: 'Bebidas con miel',
+      recipes: [
+        {
+          name: 'Té de jengibre con miel Meliphera',
+          time: '8 min',
+          servings: '1 taza',
+          ingredients: [
+            '1 pieza de jengibre fresco (3 cm), rallado',
+            '2 tazas de agua',
+            '1 cucharada de miel Meliphera',
+            'Jugo de ½ limón',
+            '1 rama de canela (opcional)',
+          ],
+          steps: [
+            'Hervir el agua con el jengibre y la canela durante 5 minutos.',
+            'Retirar del fuego y dejar reposar 3 minutos.',
+            'Colar y agregar la miel y el limón.',
+            'Servir caliente.',
+          ],
+          tip: 'Ideal para días fríos o cuando sientes garganta irritada.',
+        },
+        {
+          name: 'Agua de coco con miel y limón',
+          time: '5 min',
+          servings: '2 porciones',
+          ingredients: [
+            '2 tazas de agua de coco',
+            'Jugo de 2 limones',
+            '2 cucharadas de miel Meliphera',
+            'Hielo al gusto',
+            'Hierbabuena fresca',
+          ],
+          steps: [
+            'Mezclar el agua de coco con el jugo de limón.',
+            'Disolver la miel en un poco de agua tibia y agregar a la mezcla.',
+            'Servir con hielo y hojas de hierbabuena.',
+          ],
+          tip: 'Refrescante y electrolítico, perfecto después del ejercicio.',
+        },
+        {
+          name: 'Smoothie de mango y miel',
+          time: '5 min',
+          servings: '2 porciones',
+          ingredients: [
+            '1 taza de mango congelado',
+            '1 taza de yogur natural',
+            '½ taza de leche',
+            '1 cucharada de miel Meliphera',
+            '1 cucharada de avena',
+          ],
+          steps: [
+            'Licuar todos los ingredientes hasta obtener una mezcla homogénea.',
+            'Servir inmediatamente.',
+          ],
+          tip: 'Agregar una cucharada de proteína en polvo para un batido post-ejercicio.',
+        },
+        {
+          name: 'Limonada suave con miel',
+          time: '5 min',
+          servings: '4 porciones',
+          ingredients: [
+            'Jugo de 6 limones',
+            '1 litro de agua',
+            '3 cucharadas de miel Meliphera',
+            'Hielo al gusto',
+            'Rodajas de limón',
+          ],
+          steps: [
+            'Disolver la miel en 1 taza de agua tibia.',
+            'Mezclar con el jugo de limón y el resto del agua.',
+            'Servir con hielo y rodajas de limón.',
+          ],
+          tip: 'La miel se disuelve mejor en agua tibia primero.',
+        },
+      ],
+    },
+    {
+      number: 3,
+      title: 'Postres con miel',
+      recipes: [
+        {
+          name: 'Galletas de avena y miel',
+          time: '25 min',
+          servings: '24 galletas',
+          ingredients: [
+            '2 tazas de avena en hojuelas',
+            '1 taza de harina de avena',
+            '½ taza de miel Meliphera',
+            '½ taza de mantequilla',
+            '1 huevo',
+            '1 cucharadita de canela',
+            '½ taza de chips de chocolate (opcional)',
+          ],
+          steps: [
+            'Precalentar horno a 180°C.',
+            'Batir la mantequilla con la miel hasta obtener una mezcla cremosa.',
+            'Agregar el huevo y mezclar bien.',
+            'Incorporar la avena, la harina y la canela.',
+            'Formar bolitas y aplastar ligeramente en bandeja.',
+            'Hornear 12-15 minutos hasta que estén doradas.',
+          ],
+          tip: 'La miel le da un color dorado perfecto y un sabor más complejo que el azúcar.',
+        },
+        {
+          name: 'Helado natural de miel y vainilla',
+          time: '20 min + congelación',
+          servings: '4 porciones',
+          ingredients: [
+            '2 tazas de crema de leche',
+            '1 taza de leche condensada',
+            '3 cucharadas de miel Meliphera',
+            '1 cucharadita de extracto de vainilla',
+          ],
+          steps: [
+            'Batir la crema de leche hasta que esté firme.',
+            'Mezclar la leche condensada con la miel y la vainilla.',
+            'Incorporar la crema batida suavemente.',
+            'Verter en molde y congelar 6 horas.',
+          ],
+          tip: 'La miel evita que el helado se forme en cristales grandes.',
+        },
+        {
+          name: 'Brownies húmedos con miel',
+          time: '35 min',
+          servings: '16 porciones',
+          ingredients: [
+            '200g de chocolate negro',
+            '½ taza de mantequilla',
+            '½ taza de miel Meliphera',
+            '2 huevos',
+            '1 taza de harina',
+            '1 cucharadita de vainilla',
+            'Nueces picadas (opcional)',
+          ],
+          steps: [
+            'Precalentar horno a 175°C.',
+            'Derretir el chocolate con la mantequilla al baño maría.',
+            'Agregar la miel y mezclar.',
+            'Incorporar los huevos uno a uno.',
+            'Agregar la harina y la vainilla, mezclando sin batir de más.',
+            'Hornear 20-25 minutos (el centro debe quedar ligeramente húmedo).',
+          ],
+          tip: 'No sobre-hornear: los brownies deben quedar húmedos en el centro.',
+        },
+        {
+          name: 'Mousse de chocolate con miel',
+          time: '30 min + refrigeración',
+          servings: '6 porciones',
+          ingredients: [
+            '200g de chocolate negro',
+            '3 huevos (yemas y claras separadas)',
+            '3 cucharadas de miel Meliphera',
+            '1 taza de crema de leche',
+          ],
+          steps: [
+            'Derretir el chocolate y dejar enfriar ligeramente.',
+            'Mezclar las yemas con la miel y el chocolate.',
+            'Batir la crema hasta que esté semifirme.',
+            'Batir las claras a punto de nieve.',
+            'Incorporar crema y claras al chocolate, moviendo suavemente.',
+            'Refrigerar mínimo 4 horas.',
+          ],
+        },
+        {
+          name: 'Flan de miel',
+          time: '50 min + enfriamiento',
+          servings: '8 porciones',
+          ingredients: [
+            '1 taza de miel Meliphera (para el caramelo)',
+            '6 huevos',
+            '2 tazas de leche',
+            '1 lata de leche condensada',
+            '1 cucharadita de vainilla',
+          ],
+          steps: [
+            'Caramelizar la miel en una olla y verter en el molde.',
+            'Batir los huevos con la leche, leche condensada y vainilla.',
+            'Colar la mezcla y verter sobre el caramelo.',
+            'Cocinar al baño maría por 45 minutos.',
+            'Refrigerar mínimo 4 horas antes de desmoldar.',
+          ],
+          tip: 'La miel carameliza de manera diferente al azúcar: queda más dorada y con sabor más profundo.',
+        },
+        {
+          name: 'Compota de frutas con miel',
+          time: '20 min',
+          servings: '4 porciones',
+          ingredients: [
+            '4 manzanas (o peras), peladas y cortadas',
+            '3 cucharadas de miel Meliphera',
+            '½ taza de agua',
+            '1 cucharadita de canela',
+            'Jugo de ½ limón',
+          ],
+          steps: [
+            'Colocar las frutas en olla con agua, miel y canela.',
+            'Cocinar a fuego bajo 15 minutos, revolviendo ocasionalmente.',
+            'Agregar el limón y cocinar 2 minutos más.',
+            'Servir caliente o frío.',
+          ],
+        },
+      ],
+    },
+    {
+      number: 4,
+      title: 'Platos salados con miel',
+      recipes: [
+        {
+          name: 'Adobo de miel y especias para pollo',
+          time: '15 min + marinado',
+          servings: '4 porciones',
+          ingredients: [
+            '4 presas de pollo',
+            '3 cucharadas de miel Meliphera',
+            '2 cucharadas de salsa de soya',
+            '1 cucharada de aceite de oliva',
+            '2 dientes de ajo picados',
+            '1 cucharadita de pimentón',
+            'Sal y pimienta al gusto',
+          ],
+          steps: [
+            'Mezclar la miel, salsa de soya, aceite, ajo y pimentón.',
+            'Marinar el pollo mínimo 30 minutos (mejor toda la noche).',
+            'Cocinar en sartén o horno a 200°C por 25-30 minutos.',
+            'Bañar con el marinado restante durante la cocción.',
+          ],
+          tip: 'La miel crea un glaseado natural hermoso al hornear.',
+        },
+        {
+          name: 'Ensalada de queso cabra y miel',
+          time: '10 min',
+          servings: '2 porciones',
+          ingredients: [
+            '1 taza de mezcla de lechugas',
+            '100g de queso cabra',
+            '½ taza de nueces',
+            '¼ taza de arándanos deshidratados',
+            '2 cucharadas de miel Meliphera',
+            'Vinagreta de mostaza y miel',
+          ],
+          steps: [
+            'Disponer las lechugas en platos.',
+            'Agregar el queso desmenuzado, nueces y arándanos.',
+            'Rociar con miel pura y vinagreta.',
+          ],
+          tip: 'El contraste entre el queso salado y la miel dulce es perfecto.',
+        },
+        {
+          name: 'Salmón glaseado con miel',
+          time: '20 min',
+          servings: '4 porciones',
+          ingredients: [
+            '4 filetes de salmón',
+            '3 cucharadas de miel Meliphera',
+            '2 cucharadas de salsa de soya',
+            '1 cucharada de mostaza Dijon',
+            'Jugo de 1 limón',
+            'Eneldo fresco',
+          ],
+          steps: [
+            'Mezclar la miel, salsa de soya, mostaza y limón.',
+            'Colocar el salmón en bandeja y bañar con la mezcla.',
+            'Hornear a 200°C por 12-15 minutos.',
+            'Decorar con eneldo fresco.',
+          ],
+        },
+        {
+          name: 'Pollo asado con miel y romero',
+          time: '1 hora',
+          servings: '6 porciones',
+          ingredients: [
+            '1 pollo entero (o muslos)',
+            '4 cucharadas de miel Meliphera',
+            '2 cucharadas de romero fresco picado',
+            '3 dientes de ajo',
+            '2 cucharadas de aceite de oliva',
+            'Sal, pimienta, limón',
+          ],
+          steps: [
+            'Precalentar horno a 200°C.',
+            'Mezclar la miel, romero, ajo, aceite y limón.',
+            'Untar el pollo con esta mezcla por todas partes.',
+            'Hornear 45-60 minutos, bañando cada 20 minutos.',
+            'Dejar reposar 5 minutos antes de servir.',
+          ],
+          tip: 'El romero de nuestra región le da un aroma único al pollo.',
+        },
+      ],
+    },
+    {
+      number: 5,
+      title: 'Usos medicinales y de belleza',
+      recipes: [
+        {
+          name: 'Alivio natural para la tos',
+          time: '5 min',
+          ingredients: ['1 cucharada de miel Meliphera', 'Jugo de ½ limón', '½ taza de agua tibia'],
+          steps: ['Mezclar la miel con el jugo de limón.', 'Agregar agua tibia.', 'Beber lentamente, 3 veces al día.'],
+          tip: 'La OMS reconoce la miel como un remedio efectivo para la tos.',
+        },
+        {
+          name: 'Mascarilla facial hidratante',
+          time: '15 min',
+          ingredients: ['2 cucharadas de miel Meliphera', '1 cucharada de yogur natural', '1 cucharada de avena molida'],
+          steps: ['Mezclar todos los ingredientes.', 'Aplicar en el rostro limpio.', 'Dejar actuar 15 minutos.', 'Enjuagar con agua tibia.'],
+          tip: 'La miel humecta la piel sin obstruir los poros.',
+        },
+        {
+          name: 'Exfoliante corporal de miel y azúcar',
+          time: '10 min',
+          ingredients: ['½ taza de miel Meliphera', '1 taza de azúcar moreno', '¼ taza de aceite de coco'],
+          steps: ['Mezclar todos los ingredientes.', 'Aplicar en piel húmeda con movimientos circulares.', 'Enjuagar con agua tibia.'],
+          tip: 'Usar 1-2 veces por semana para piel suave y luminosa.',
+        },
+        {
+          name: 'Mascarilla capilar hidratante',
+          time: '30 min',
+          ingredients: ['3 cucharadas de miel Meliphera', '2 cucharadas de aceite de oliva', '1 huevo'],
+          steps: ['Mezclar todos los ingredientes.', 'Aplicar en el cabello húmedo desde raíz hasta puntas.', 'Envolver con toalla caliente por 30 minutos.', 'Lavar con champú suave.'],
+          tip: 'Ideal para cabello seño o dañado por el sol.',
+        },
+      ],
+    },
+    {
+      number: 6,
+      title: 'Tabla de equivalencias',
+      isTable: true,
+      table: [
+        { sugar: '1 cucharada', honey: '¾ cucharada', liquid: 'Reducir líquido 1 cdta' },
+        { sugar: '¼ taza', honey: '3 cucharadas', liquid: 'Reducir líquido 1 cda' },
+        { sugar: '⅓ taza', honey: '¼ taza', liquid: 'Reducir líquido 1 cda' },
+        { sugar: '½ taza', honey: '⅓ taza', liquid: 'Reducir líquido 2 cdas' },
+        { sugar: '¾ taza', honey: '½ taza + 1 cda', liquid: 'Reducir líquido 3 cdas' },
+        { sugar: '1 taza', honey: '¾ taza', liquid: 'Reducir líquido ¼ taza' },
+      ],
+      note: 'Al sustituir azúcar por miel, reducir otros líquidos de la receta y bajar la temperatura del horno 25°F (15°C).',
+    },
+    {
+      number: 7,
+      title: 'Consejos de almacenamiento',
+      isTips: true,
+      tips: [
+        'Conservar en lugar fresco y seco, alejado de la luz directa.',
+        'No refrigerar: la miel se cristaliza más rápido en frío.',
+        'Usar cucharas limpias y secas para evitar contaminación.',
+        'Si cristaliza, calentar al baño maría suave (nunca microondas).',
+        'La miel no caduca: se mantiene por años si se almacena correctamente.',
+        'Los frascos de vidrio son ideales para conservar la calidad.',
+        'Etiquetar siempre con la fecha de compra para control.',
+      ],
+    },
+  ],
+};

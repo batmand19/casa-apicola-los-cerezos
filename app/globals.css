@@ -1,0 +1,244 @@
+@import "tailwindcss";
+
+/* ============================================
+   Casa Apícola Los Cerezos - Estilos globales
+   Sprint 1 + 2 + 3
+   ============================================ */
+
+/* Tipografía base */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #1a1a1a;
+  background-color: #fffdf7;
+  font-size: 16px; /* Base: 16px mínimo para mobile */
+  line-height: 1.6; /* Interlineado mejorado para legibilidad */
+}
+
+/* Máximo ancho de línea para legibilidad óptima (70-80 caracteres) */
+.prose-width {
+  max-width: 70ch;
+}
+
+/* Paleta de colores personalizada */
+@theme {
+  --color-miel-50: #fffdf7;
+  --color-miel-100: #fff8e1;
+  --color-miel-200: #ffecb3;
+  --color-miel-300: #ffe082;
+  --color-miel-400: #ffd54f;
+  --color-miel-500: #f59e0b;
+  --color-miel-600: #d97706;
+  --color-miel-700: #b45309;
+  --color-miel-800: #92400e;
+  --color-miel-900: #78350f;
+
+  --color-bosque-50: #f0fdf4;
+  --color-bosque-100: #dcfce7;
+  --color-bosque-200: #bbf7d0;
+  --color-bosque-500: #22c55e;
+  --color-bosque-600: #16a34a;
+  --color-bosque-700: #15803d;
+  --color-bosque-800: #166534;
+  --color-bosque-900: #14532d;
+
+  --color-tierra-50: #faf5f0;
+  --color-tierra-100: #f0e6d3;
+  --color-tierra-200: #e2d0b3;
+  --color-tierra-700: #6b4c2a;
+  --color-tierra-800: #4a3520;
+  --color-tierra-900: #3b2a19;
+}
+
+/* Animación de fade-in para secciones */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Estilos para imágenes placeholder */
+.img-placeholder {
+  background: linear-gradient(135deg, #ffe082 0%, #f59e0b 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #92400e;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Focus visible para accesibilidad — WCAG */
+:focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip link para accesibilidad */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  padding: 12px 24px;
+  background: #d97706;
+  color: white;
+  font-weight: 600;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.2s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================
+   Sprint 2: Estilos de producto y conversión
+   ============================================ */
+
+/* Botón Añadir al carrito */
+.btn-add-cart {
+  @apply inline-flex items-center justify-center w-full px-6 py-3.5 text-base font-semibold text-white bg-miel-600 hover:bg-miel-700 active:bg-miel-800 rounded-xl shadow-lg shadow-miel-500/25 transition-all duration-200 min-h-[48px];
+}
+.btn-add-cart:hover {
+  transform: scale(1.02);
+}
+.btn-add-cart:active {
+  transform: scale(0.98);
+}
+
+/* Botón Comprar ahora */
+.btn-buy-now {
+  @apply inline-flex items-center justify-center w-full px-6 py-3.5 text-base font-semibold text-miel-800 bg-white hover:bg-miel-50 border-2 border-miel-300 rounded-xl transition-all duration-200 min-h-[48px];
+}
+.btn-buy-now:hover {
+  transform: scale(1.02);
+}
+.btn-buy-now:active {
+  transform: scale(0.98);
+}
+
+/* Selector de tamaños */
+.size-btn {
+  @apply flex-1 min-w-[80px] px-4 py-3 text-sm font-medium text-center border-2 border-tierra-200 rounded-xl transition-all duration-200 cursor-pointer bg-white;
+}
+.size-btn:hover {
+  @apply border-miel-400 bg-miel-50;
+}
+.size-btn.active {
+  @apply border-miel-600 bg-miel-100 text-miel-800 font-semibold;
+}
+
+/* Precio destacado */
+.price-highlight {
+  @apply text-3xl sm:text-4xl font-bold text-miel-700;
+}
+
+/* Badge de stock */
+.badge-stock {
+  @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full;
+}
+.badge-stock.available {
+  @apply bg-bosque-100 text-bosque-700 border border-bosque-200;
+}
+
+/* Envío gratis */
+.free-shipping {
+  @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full bg-miel-100 text-miel-800 border border-miel-200;
+}
+
+/* ============================================
+   Sprint 3: Responsive y legibilidad
+   ============================================ */
+
+/* Offsets para secciones con header sticky (h-16 = 64px) */
+section[id] {
+  scroll-margin-top: 80px; /* 64px header + 16px buffer */
+}
+
+/* Tipografía responsiva */
+h1 {
+  font-size: 2rem; /* 32px mobile */
+  line-height: 1.2;
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.5rem; /* 40px tablet */
+  }
+}
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem; /* 48px desktop */
+  }
+}
+
+h2 {
+  font-size: 1.5rem; /* 24px mobile */
+  line-height: 1.3;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 1.75rem; /* 28px tablet */
+  }
+}
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 2rem; /* 32px desktop */
+  }
+}
+
+/* Párrafos con espaciado y largo de línea óptimo */
+p {
+  line-height: 1.6;
+  margin-bottom: 1.25rem; /* 20px separación entre párrafos */
+  max-width: 70ch; /* ~70 caracteres por línea */
+}
+
+/* Botones táctiles: mínimo 44x44px WCAG */
+button, a[role="button"], .btn-add-cart, .btn-buy-now {
+  min-height: 44px;
+}
+
+/* Contenedores: padding horizontal consistente en mobile */
+@media (max-width: 640px) {
+  .container-padding {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Badges: grid 2x2 en mobile */
+@media (max-width: 480px) {
+  .trust-badges-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+}
+
+/* Selector de tamaños: touch-friendly en mobile */
+@media (max-width: 480px) {
+  .size-btn {
+    min-height: 52px;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Precios: no cortar en mobile */
+.price-highlight {
+  word-break: keep-all;
+  white-space: nowrap;
+}
