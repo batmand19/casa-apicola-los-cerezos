@@ -15,9 +15,7 @@ import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <>
-      <a href="#productos" className="skip-link" aria-label="Saltar al contenido principal">
-        Saltar al contenido
-      </a>
+      <a href="#productos" className="skip-link" aria-label="Saltar al contenido principal">Saltar al contenido</a>
 
       <Hero />
 

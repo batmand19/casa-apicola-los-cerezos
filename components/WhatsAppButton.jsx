@@ -3,14 +3,7 @@
 import { useState, useEffect } from 'react';
 import { trackWhatsAppClick } from '@/lib/tracking';
 
-/*
- * INSTRUCCIONES PARA NÚMERO REAL:
- * Reemplaza el número placeholder con tu número de WhatsApp Business.
- * Formato: https://wa.me/57XXXXXXXXXX?text=...
- * El mensaje se codifica con encodeURIComponent.
- */
-
-const WHATSAPP_NUMBER = '573208065008'; // ← Tu número real
+const WHATSAPP_NUMBER = '573208065008';
 const MESSAGE = 'Hola, quiero consultar sobre la miel y polen Meliphera de Casa Apícola Los Cerezos 🍯';
 
 export default function WhatsAppButton() {
@@ -18,41 +11,28 @@ export default function WhatsAppButton() {
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), 3000);
+    const timer = setTimeout(() => setIsVisible(true), 4000);
     return () => clearTimeout(timer);
   }, []);
-
-  const handleClick = () => {
-    trackWhatsAppClick();
-  };
 
   if (!isVisible) return null;
 
   return (
-    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end gap-3">
-      {/* Tooltip */}
+    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-3">
       {showTooltip && (
-        <div className="bg-white text-tierra-900 text-sm font-medium px-4 py-2.5 rounded-xl shadow-lg border border-gray-100 max-w-[200px] animate-fade-in-up">
+        <div className="bg-white text-earth-800 text-sm font-medium px-4 py-3 rounded-2xl shadow-xl max-w-[200px] animate-fade-in-up border border-cream-300">
           ¿Preguntas? Escríbenos
-          <button
-            onClick={() => setShowTooltip(false)}
-            className="ml-2 text-tierra-700/50 hover:text-tierra-700"
-            aria-label="Cerrar tooltip"
-          >
-            ×
-          </button>
+          <button onClick={() => setShowTooltip(false)} className="ml-2 text-earth-400 hover:text-earth-700" aria-label="Cerrar">×</button>
         </div>
       )}
-
-      {/* Botón flotante */}
       <a
         href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(MESSAGE)}`}
         target="_blank"
         rel="noopener noreferrer"
-        onClick={handleClick}
+        onClick={() => trackWhatsAppClick()}
         onMouseEnter={() => setShowTooltip(true)}
         onMouseLeave={() => setShowTooltip(false)}
-        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20BD5A] text-white shadow-lg shadow-[#25D366]/30 flex items-center justify-center transition-all duration-200 hover:scale-110"
+        className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-gradient-to-br from-[#25D366] to-[#128C7E] text-white shadow-lg shadow-[#25D366]/30 flex items-center justify-center transition-all duration-500 hover:scale-110 hover:shadow-xl hover:shadow-[#25D366]/40"
         aria-label="Contactar por WhatsApp"
       >
         <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

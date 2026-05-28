@@ -5,48 +5,38 @@ import { trackClick, trackMobileMenu } from '@/lib/tracking';
 
 const NAV_ITEMS = [
   { href: '#hero', label: 'Inicio' },
-  { href: '#historia', label: 'Historia' },
+  { href: '#historia', label: 'Nuestra Historia' },
   { href: '#productos', label: 'Productos' },
   { href: '/blog', label: 'Blog' },
 ];
 
-const HEADER_HEIGHT = 72;
+const HEADER_HEIGHT = 80;
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
-        setIsMobileMenuOpen(false);
-      }
-    };
+    const handleResize = () => { if (window.innerWidth >= 768) setIsMobileMenuOpen(false); };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const handleNavClick = (e, href, label) => {
-    // Si es enlace externo (blog), dejar que navegue normalmente
     if (href.startsWith('/')) {
       trackClick(`nav_${label.toLowerCase()}`, href, { label });
-      return; // Permitir navegación nativa
+      return;
     }
-
     e.preventDefault();
     setIsMobileMenuOpen(false);
     trackClick(`nav_${label.toLowerCase()}`, href, { label });
-
-    const targetId = href.replace('#', '');
-    const target = document.getElementById(targetId);
+    const target = document.getElementById(href.replace('#', ''));
     if (target) {
       const top = target.getBoundingClientRect().top + window.scrollY - HEADER_HEIGHT;
       window.scrollTo({ top, behavior: 'smooth' });
@@ -54,44 +44,54 @@ export default function Header() {
   };
 
   const toggleMobileMenu = () => {
-    const newState = !isMobileMenuOpen;
-    setIsMobileMenuOpen(newState);
-    trackMobileMenu(newState ? 'open' : 'close');
+    const next = !isMobileMenuOpen;
+    setIsMobileMenuOpen(next);
+    trackMobileMenu(next ? 'open' : 'close');
   };
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
         isScrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-md'
+          ? 'glass shadow-lg shadow-black/[0.03]'
           : 'bg-transparent'
       }`}
       role="banner"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <a
             href="#hero"
             onClick={(e) => handleNavClick(e, '#hero', 'Inicio')}
-            className="flex items-center gap-2 group min-h-[44px] py-1"
+            className="flex items-center gap-3 group min-h-[44px] py-1"
             aria-label="Casa Apícola Los Cerezos - Ir al inicio"
           >
-            <span className="text-2xl" aria-hidden="true">🍯</span>
-            <span className="text-sm sm:text-base font-bold text-tierra-900 group-hover:text-miel-700 transition-colors leading-tight">
-              Casa Apícola<br className="hidden sm:inline" />{' '}
-              <span className="text-miel-700">Los Cerezos</span>
-            </span>
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-honey-400 to-honey-600 flex items-center justify-center text-white text-lg shadow-md shadow-honey-500/20 group-hover:shadow-honey-500/40 transition-shadow duration-500">
+              🍯
+            </div>
+            <div className="leading-tight">
+              <span className={`block text-sm font-semibold tracking-wide transition-colors duration-500 ${isScrolled ? 'text-earth-800' : 'text-white'}`}>
+                Casa Apícola
+              </span>
+              <span className={`block text-[11px] font-medium tracking-[0.15em] uppercase transition-colors duration-500 ${isScrolled ? 'text-honey-600' : 'text-honey-300'}`}>
+                Los Cerezos
+              </span>
+            </div>
           </a>
 
-          {/* Navegación desktop */}
+          {/* Nav desktop */}
           <nav className="hidden md:flex items-center gap-1" aria-label="Navegación principal">
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href, item.label)}
-                className="px-4 py-2 text-sm font-medium text-tierra-700 hover:text-miel-700 hover:bg-miel-50 rounded-lg transition-colors min-h-[44px] flex items-center"
+                className={`px-4 py-2 text-[13px] font-medium tracking-wide rounded-full transition-all duration-300 min-h-[44px] flex items-center ${
+                  isScrolled
+                    ? 'text-earth-600 hover:text-honey-600 hover:bg-honey-50'
+                    : 'text-white/80 hover:text-white hover:bg-white/10'
+                }`}
               >
                 {item.label}
               </a>
@@ -103,65 +103,58 @@ export default function Header() {
             <a
               href="#productos"
               onClick={(e) => handleNavClick(e, '#productos', 'Productos')}
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-miel-600 hover:bg-miel-700 rounded-xl shadow-md shadow-miel-500/20 transition-all duration-200 min-h-[44px]"
+              className={`px-6 py-2.5 text-[13px] font-semibold tracking-wide rounded-full transition-all duration-300 min-h-[44px] flex items-center ${
+                isScrolled
+                  ? 'text-white bg-gradient-to-r from-honey-500 to-honey-600 hover:from-honey-600 hover:to-honey-700 shadow-md shadow-honey-500/20'
+                  : 'text-earth-800 bg-white/90 hover:bg-white shadow-md'
+              }`}
             >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
-              </svg>
               Comprar
             </a>
           </div>
 
-          {/* Hamburguesa mobile */}
+          {/* Hamburguesa */}
           <button
             onClick={toggleMobileMenu}
-            className="md:hidden inline-flex items-center justify-center w-11 h-11 rounded-lg text-tierra-700 hover:bg-miel-50 transition-colors"
+            className="md:hidden relative w-11 h-11 flex items-center justify-center rounded-full transition-colors"
             aria-expanded={isMobileMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label={isMobileMenuOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'}
+            aria-label={isMobileMenuOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
-            {isMobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
+            <div className="flex flex-col gap-1.5 w-5">
+              <span className={`block h-[1.5px] rounded-full transition-all duration-300 origin-center ${isMobileMenuOpen ? 'rotate-45 translate-y-[4.5px]' : ''} ${isScrolled ? 'bg-earth-800' : 'bg-white'}`} />
+              <span className={`block h-[1.5px] rounded-full transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 scale-x-0' : ''} ${isScrolled ? 'bg-earth-800' : 'bg-white'}`} />
+              <span className={`block h-[1.5px] rounded-full transition-all duration-300 origin-center ${isMobileMenuOpen ? '-rotate-45 -translate-y-[4.5px]' : ''} ${isScrolled ? 'bg-earth-800' : 'bg-white'}`} />
+            </div>
           </button>
         </div>
       </div>
 
       {/* Menú mobile */}
       <div
-        id="mobile-menu"
-        className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen
-            ? 'max-h-96 opacity-100 bg-white/95 backdrop-blur-md border-t border-tierra-100 shadow-lg'
-            : 'max-h-0 opacity-0'
+        className={`md:hidden transition-all duration-500 overflow-hidden ${
+          isMobileMenuOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'
         }`}
-        role="navigation"
-        aria-label="Menú de navegación móvil"
       >
-        <div className="max-w-7xl mx-auto px-4 py-4 space-y-1">
-          {NAV_ITEMS.map((item) => (
+        <div className="glass border-t border-white/10 shadow-xl">
+          <nav className="max-w-7xl mx-auto px-5 py-6 space-y-1" aria-label="Menú móvil">
+            {NAV_ITEMS.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                onClick={(e) => handleNavClick(e, item.href, item.label)}
+                className="block px-4 py-3.5 text-base font-medium text-earth-700 hover:text-honey-600 hover:bg-honey-50 rounded-xl transition-all duration-300 min-h-[48px] flex items-center"
+              >
+                {item.label}
+              </a>
+            ))}
             <a
-              key={item.href}
-              href={item.href}
-              onClick={(e) => handleNavClick(e, item.href, item.label)}
-              className="block px-4 py-3 text-base font-medium text-tierra-700 hover:text-miel-700 hover:bg-miel-50 rounded-xl transition-colors min-h-[48px] flex items-center"
+              href="#productos"
+              onClick={(e) => handleNavClick(e, '#productos', 'Productos')}
+              className="block px-4 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-honey-500 to-honey-600 rounded-xl transition-all duration-300 text-center mt-3 min-h-[48px] flex items-center justify-center"
             >
-              {item.label}
+              Comprar ahora
             </a>
-          ))}
-          <a
-            href="#productos"
-            onClick={(e) => handleNavClick(e, '#productos', 'Productos')}
-            className="block px-4 py-3 text-base font-semibold text-white bg-miel-600 hover:bg-miel-700 rounded-xl transition-colors text-center mt-3 min-h-[48px] flex items-center justify-center"
-          >
-            Comprar ahora
-          </a>
+          </nav>
         </div>
       </div>
     </header>

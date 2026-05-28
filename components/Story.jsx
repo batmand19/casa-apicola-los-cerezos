@@ -5,191 +5,147 @@ import Image from 'next/image';
 import { trackView, trackClick } from '@/lib/tracking';
 
 const fotos = [
-  {
-    src: '/images/colmenas-meliphera-caldas.jpg',
-    alt: 'Colmenas de abejas Apis mellifera en las montañas de Caldas, Casa Apícola Los Cerezos',
-    caption: 'Nuestras colmenas en las montañas de Caldas',
-  },
-  {
-    src: '/images/cosecha-miel-familiar.jpg',
-    alt: 'Familia cosechando miel artesanal en la zona de Caldas-Boyacá',
-    caption: 'Cosecha familiar, tradición de más de 15 años',
-  },
-  {
-    src: '/images/flor-arrayan-boyaca.jpg',
-    alt: 'Flor de Arrayán silvestre en la zona de amortiguamiento del Páramo de Rabanal, Boyacá',
-    caption: 'Arrayán silvestre del Páramo de Rabanal',
-  },
+  { src: '/images/colmenas-meliphera-caldas.jpg', alt: 'Colmenas en las montañas de Caldas, Casa Apícola Los Cerezos', caption: 'Nuestro apiario en las montañas' },
+  { src: '/images/cosecha-miel-familiar.jpg', alt: 'Familia cosechando miel artesanal en Caldas-Boyacá', caption: 'Tradición familiar' },
+  { src: '/images/flor-arrayan-boyaca.jpg', alt: 'Flor de Arrayán del Páramo de Rabanal', caption: 'Flora cundiboyacense' },
+];
+
+const timeline = [
+  { icon: '🏠', title: 'Cómo empezó', text: 'Hace más de 15 años, unas pocas colmenas en el patio trasero se convirtieron en una misión.' },
+  { icon: '👨‍👩‍👧‍👦', title: 'Tradición familiar', text: 'Tres generaciones cuidando abejas Meliphera con el mismo amor y respeto.' },
+  { icon: '🌿', title: 'Filosofía artesanal', text: 'Sin antibióticos, sin prisas, respetando los ciclos naturales de la colmena.' },
+  { icon: '🐝', title: 'Cuidado de las abejas', text: 'Dejamos suficiente miel para que las colonias sobrevivan el invierno.' },
+  { icon: '🍯', title: 'Proceso de producción', text: 'Filtrado suave, envasado sin calor excesivo, preservando cada enzima natural.' },
 ];
 
 export default function Story() {
   useEffect(() => {
-    const observer = trackView('historia', 0.5);
+    const observer = trackView('historia', 0.3);
     return () => observer?.disconnect();
   }, []);
 
   const handleCtaClick = (e) => {
     e.preventDefault();
-    trackClick('story_cta', '#productos', { label: 'Apoya la apicultura local' });
-    const target = document.getElementById('productos');
-    if (target) {
-      const top = target.getBoundingClientRect().top + window.scrollY - 80;
+    trackClick('story_cta', '#productos');
+    const el = document.getElementById('productos');
+    if (el) {
+      const top = el.getBoundingClientRect().top + window.scrollY - 80;
       window.scrollTo({ top, behavior: 'smooth' });
     }
   };
 
   return (
-    <section
-      id="historia"
-      className="py-12 sm:py-16 md:py-24 bg-white"
-      aria-labelledby="story-title"
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Encabezado */}
-        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-12 md:mb-16">
-          <span className="inline-block mb-4 px-3 py-1 text-xs font-semibold tracking-wider uppercase text-bosque-700 bg-bosque-50 rounded-full border border-bosque-200">
+    <section id="historia" className="py-24 sm:py-32 bg-cream-100" aria-labelledby="story-title">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8">
+
+        {/* Header editorial */}
+        <div className="text-center mb-20">
+          <span className="inline-block mb-4 text-[11px] font-semibold tracking-[0.25em] uppercase text-honey-600">
             Nuestra historia
           </span>
-          <h2
-            id="story-title"
-            className="text-3xl sm:text-4xl font-bold text-tierra-900 leading-tight"
-          >
+          <div className="divider-elegant mb-6" />
+          <h2 id="story-title" className="font-display text-3xl sm:text-4xl md:text-5xl font-bold text-earth-900 leading-tight max-w-3xl mx-auto">
             La historia detrás de cada frasco
           </h2>
+          <p className="mt-6 text-base sm:text-lg text-earth-500 max-w-2xl mx-auto leading-relaxed">
+            Una familia, unas abejas, y una montaña que guarda el secreto de la miel más pura de Colombia.
+          </p>
         </div>
 
-        {/* Contenido en 2 columnas */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-start">
-          {/* Columna de texto */}
-          <article className="space-y-5 text-[0.9375rem] sm:text-lg text-tierra-700 leading-relaxed">
-            <p>
-              En las montañas de <strong className="text-tierra-900">Caldas</strong>,
-              cerca del límite con <strong className="text-tierra-900">Boyacá</strong>,
-              nuestra familia comenzó este viaje hace más de 15 años. Lo que empezó como
-              unas pocas colmenas de abejas{' '}
-              <em className="font-semibold not-italic text-tierra-800">Apis mellifera</em>{' '}
-              en el patio trasero se convirtió en una misión: proteger estas abejas y su flora.
-            </p>
+        {/* Timeline visual */}
+        <div className="relative max-w-4xl mx-auto mb-24">
+          {/* Línea conectora */}
+          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-honey-300 to-transparent md:-translate-x-px" aria-hidden="true" />
 
-            <p>
-              La <em className="not-italic font-semibold text-tierra-800">Apis mellifera</em>{' '}
-              es la especie de abeja con mayor distribución en el mundo. Originaria de Europa,
-              África y parte de Asia, fue introducida en América y Oceanía. Hoy, nuestras
-              colmenas de <em className="not-italic font-semibold text-tierra-800">Apis mellifera</em>{' '}
-              prosperan en la zona de amortiguamiento del{' '}
-              <strong className="text-bosque-700">Páramo de Rabanal</strong>, donde la
-              diversidad floral es asombrosa.
-            </p>
+          <div className="space-y-12 md:space-y-16">
+            {timeline.map((step, i) => {
+              const isEven = i % 2 === 0;
+              return (
+                <div key={i} className={`relative flex items-start gap-6 md:gap-0 ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'}`}>
+                  {/* Contenido */}
+                  <div className={`flex-1 md:w-1/2 ${isEven ? 'md:pr-16 md:text-right' : 'md:pl-16'} pl-16 md:pl-0`}>
+                    <div className="group">
+                      <span className="text-3xl mb-3 block" aria-hidden="true">{step.icon}</span>
+                      <h3 className="font-display text-xl sm:text-2xl font-bold text-earth-900 mb-2 group-hover:text-honey-600 transition-colors duration-300">
+                        {step.title}
+                      </h3>
+                      <p className="text-sm sm:text-base text-earth-500 leading-relaxed">{step.text}</p>
+                    </div>
+                  </div>
 
-            <p>
-              Aquí, las abejas recolectan néctar de{' '}
+                  {/* Nodo */}
+                  <div className="absolute left-0 md:relative md:left-auto md:w-0 flex items-center justify-center">
+                    <div className="z-10 w-12 h-12 rounded-full bg-gradient-to-br from-honey-400 to-honey-600 text-white flex items-center justify-center shadow-lg shadow-honey-500/30 text-lg">
+                      {step.icon}
+                    </div>
+                  </div>
+
+                  <div className="hidden md:block md:w-1/2" aria-hidden="true" />
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Contenido editorial: 2 columnas */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          {/* Texto */}
+          <article className="space-y-6">
+            <p className="text-base sm:text-lg text-earth-600 leading-[1.8]">
+              En las montañas de <strong className="text-earth-800">Caldas</strong>, cerca del límite con <strong className="text-earth-800">Boyacá</strong>, nuestra familia comenzó este viaje hace más de 15 años. Lo que empezó como unas pocas colmenas de abejas <em className="not-italic font-semibold text-earth-800">Apis mellifera</em> en el patio trasero se convirtió en una misión: proteger estas abejas y su flora.
+            </p>
+            <p className="text-base sm:text-lg text-earth-600 leading-[1.8]">
+              La <em className="not-italic font-semibold text-earth-800">Apis mellifera</em> es la especie de abeja con mayor distribución en el mundo. Hoy, nuestras colmenas prosperan en la zona de amortiguamiento del{' '}
+              <strong className="text-forest-700">Páramo de Rabanal</strong>, donde la diversidad floral es asombrosa.
+            </p>
+            <p className="text-base sm:text-lg text-earth-600 leading-[1.8]">
+              Las abejas recolectan néctar de{' '}
               <strong>Eucalipto</strong>, <strong>Romero</strong>,{' '}
               <strong>Salvia</strong> silvestre, <strong>Uva de anís</strong> y{' '}
-              <strong>Arrayán</strong>, creando mieles con perfiles de sabor únicos en
-              cada cosecha.
+              <strong>Arrayán</strong>, creando mieles con perfiles de sabor únicos en cada cosecha.
             </p>
 
-            <p>
-              Practicamos apicultura sostenible: no usamos antibióticos, respetamos los
-              ciclos naturales de las abejas{' '}
-              <em className="not-italic font-semibold text-tierra-800">Apis mellifera</em>,
-              y dejamos suficiente miel para que las colonias sobrevivan el invierno. Cada
-              frasco que recibes representa este equilibrio entre tradición familiar y
-              conservación ambiental.
-            </p>
-
-            {/* CTA */}
             <div className="pt-4">
-              <a
-                href="#productos"
-                onClick={handleCtaClick}
-                className="inline-flex items-center text-base sm:text-lg font-semibold text-miel-700 hover:text-miel-800 transition-colors group min-h-[44px]"
-                aria-label="Ver productos y apoyar la apicultura local"
-              >
+              <a href="#productos" onClick={handleCtaClick} className="inline-flex items-center gap-2 text-sm font-semibold text-honey-600 hover:text-honey-700 transition-colors group min-h-[44px]">
                 Apoya la apicultura local
-                <svg
-                  className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
-                >
+                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                 </svg>
               </a>
             </div>
           </article>
 
-          {/* Columna de fotos — lazy loading, sizes responsivos */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group" aria-label="Galería de fotos de Casa Apícola Los Cerezos">
-            {/* Foto grande */}
-            <figure className="sm:col-span-2 relative aspect-[16/10] rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src={fotos[0].src}
-                alt={fotos[0].alt}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                className="object-cover"
-                loading="lazy"
-              />
+          {/* Galería */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="group" aria-label="Galería de fotos">
+            <figure className="sm:col-span-2 relative aspect-[16/10] rounded-2xl overflow-hidden shadow-xl group">
+              <Image src={fotos[0].src} alt={fotos[0].alt} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px" className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              <div className="absolute bottom-4 left-4 right-4">
+                <figcaption className="text-sm font-medium text-white">{fotos[0].caption}</figcaption>
+              </div>
               <div className="absolute inset-0 img-placeholder">
                 <div className="text-center p-4">
-                  <svg className="w-12 h-12 mx-auto mb-2 text-miel-700/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-xs">{fotos[0].caption}</span>
-                  <br />
-                  <code className="text-[10px] text-miel-800/60">colmenas-meliphera-caldas.jpg</code>
+                  <span className="text-3xl block mb-2">🏔️</span>
+                  <code className="text-[10px] text-earth-500/60">{fotos[0].src}</code>
                 </div>
               </div>
-              <figcaption className="sr-only">{fotos[0].caption}</figcaption>
             </figure>
 
-            {/* Foto 2 */}
-            <figure className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src={fotos[1].src}
-                alt={fotos[1].alt}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 300px"
-                className="object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 img-placeholder">
-                <div className="text-center p-3">
-                  <svg className="w-10 h-10 mx-auto mb-1 text-miel-700/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-[11px]">{fotos[1].caption}</span>
-                  <br />
-                  <code className="text-[10px] text-miel-800/60">cosecha-miel-familiar.jpg</code>
+            {fotos.slice(1).map((foto, i) => (
+              <figure key={i} className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg group">
+                <Image src={foto.src} alt={foto.alt} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 300px" className="object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+                <div className="absolute bottom-3 left-3">
+                  <span className="text-xs font-medium text-white">{foto.caption}</span>
                 </div>
-              </div>
-              <figcaption className="sr-only">{fotos[1].caption}</figcaption>
-            </figure>
-
-            {/* Foto 3 */}
-            <figure className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
-              <Image
-                src={fotos[2].src}
-                alt={fotos[2].alt}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 25vw, 300px"
-                className="object-cover"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 img-placeholder">
-                <div className="text-center p-3">
-                  <svg className="w-10 h-10 mx-auto mb-1 text-miel-700/50" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-[11px]">{fotos[2].caption}</span>
-                  <br />
-                  <code className="text-[10px] text-miel-800/60">flor-arrayan-boyaca.jpg</code>
+                <div className="absolute inset-0 img-placeholder">
+                  <div className="text-center p-3">
+                    <span className="text-2xl block mb-1">📸</span>
+                    <code className="text-[9px] text-earth-500/60">{foto.src}</code>
+                  </div>
                 </div>
-              </div>
-              <figcaption className="sr-only">{fotos[2].caption}</figcaption>
-            </figure>
+              </figure>
+            ))}
           </div>
         </div>
       </div>
