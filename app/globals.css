@@ -1,347 +1,116 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
-
 @import "tailwindcss";
 
 /* ============================================
    CASA APÍCOLA LOS CEREZOS
-   Premium Artisanal Design System
+   Cinematic Artisanal Design System v2
    ============================================ */
 
-/* --- Base --- */
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+body { font-family: 'Inter', system-ui, sans-serif; color: #2c2416; background-color: #faf8f4; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
 
-body {
-  font-family: 'Inter', system-ui, sans-serif;
-  color: #2c2416;
-  background-color: #faf8f4;
-  font-size: 16px;
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* --- Paleta Premium --- */
 @theme {
-  /* Fuentes */
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body: 'Inter', system-ui, sans-serif;
-  /* Crema / Base */
-  --color-cream-50: #fefdfb;
-  --color-cream-100: #faf8f4;
-  --color-cream-200: #f5f0e8;
-  --color-cream-300: #ede5d8;
-  --color-cream-400: #ddd2c0;
-
-  /* Miel / Dorado */
-  --color-honey-50: #fefbf0;
-  --color-honey-100: #fdf3d7;
-  --color-honey-200: #fbe6aa;
-  --color-honey-300: #f8d47a;
-  --color-honey-400: #f0b842;
-  --color-honey-500: #d4952a;
-  --color-honey-600: #b87a1e;
-  --color-honey-700: #956018;
-  --color-honey-800: #7a4e15;
-  --color-honey-900: #5c3a0f;
-
-  /* Bosque / Verde oliva */
-  --color-forest-50: #f4f7f0;
-  --color-forest-100: #e6edde;
-  --color-forest-200: #cddcbe;
-  --color-forest-300: #a8c28e;
-  --color-forest-400: #7da55e;
-  --color-forest-500: #5a7a3e;
-  --color-forest-600: #466130;
-  --color-forest-700: #384d27;
-  --color-forest-800: #2d3d20;
-  --color-forest-900: #1e2a16;
-
-  /* Tierra / Cálida */
-  --color-earth-50: #faf6f1;
-  --color-earth-100: #f0e8dc;
-  --color-earth-200: #e2d3c0;
-  --color-earth-300: #c9b49a;
-  --color-earth-400: #b09478;
-  --color-earth-500: #8b7355;
-  --color-earth-600: #6b5840;
-  --color-earth-700: #4a3d2d;
-  --color-earth-800: #352b20;
-  --color-earth-900: #221c15;
-
-  /* Acentos */
-  --color-warm-white: #fffef9;
-  --color-soft-black: #1a1612;
+  --color-cream-50: #fefdfb; --color-cream-100: #faf8f4; --color-cream-200: #f5f0e8; --color-cream-300: #ede5d8; --color-cream-400: #ddd2c0;
+  --color-honey-50: #fefbf0; --color-honey-100: #fdf3d7; --color-honey-200: #fbe6aa; --color-honey-300: #f8d47a; --color-honey-400: #f0b842; --color-honey-500: #d4952a; --color-honey-600: #b87a1e; --color-honey-700: #956018; --color-honey-800: #7a4e15; --color-honey-900: #5c3a0f;
+  --color-forest-50: #f4f7f0; --color-forest-100: #e6edde; --color-forest-200: #cddcbe; --color-forest-300: #a8c28e; --color-forest-400: #7da55e; --color-forest-500: #5a7a3e; --color-forest-600: #466130; --color-forest-700: #384d27; --color-forest-800: #2d3d20; --color-forest-900: #1e2a16;
+  --color-earth-50: #faf6f1; --color-earth-100: #f0e8dc; --color-earth-200: #e2d3c0; --color-earth-300: #c9b49a; --color-earth-400: #b09478; --color-earth-500: #8b7355; --color-earth-600: #6b5840; --color-earth-700: #4a3d2d; --color-earth-800: #352b20; --color-earth-900: #221c15;
+  --color-warm-white: #fffef9; --color-soft-black: #1a1612;
 }
 
-/* --- Animaciones Premium --- */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
+/* --- Animaciones Cinematográficas (lentas, elegantes) --- */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-8px); } }
+@keyframes breathe { 0%, 100% { opacity: 0.4; } 50% { opacity: 0.7; } }
+@keyframes honeyDrip { 0% { transform: scaleY(0); transform-origin: top; } 100% { transform: scaleY(1); transform-origin: top; } }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes scaleIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@keyframes slideInRight {
-  from { opacity: 0; transform: translateX(30px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-6px); }
-}
-
-.animate-fade-in-up {
-  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-fade-in {
-  animation: fadeIn 0.6s ease-out forwards;
-}
-
-.animate-scale-in {
-  animation: scaleIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-slide-right {
-  animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-/* Stagger delays */
-.delay-100 { animation-delay: 100ms; }
-.delay-200 { animation-delay: 200ms; }
-.delay-300 { animation-delay: 300ms; }
-.delay-400 { animation-delay: 400ms; }
-.delay-500 { animation-delay: 500ms; }
+.animate-fade-in-up { animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+.animate-scale-in { animation: scaleIn 1s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.animate-float { animation: float 4s ease-in-out infinite; }
+.animate-breathe { animation: breathe 4s ease-in-out infinite; }
+.delay-100 { animation-delay: 100ms; } .delay-200 { animation-delay: 200ms; } .delay-300 { animation-delay: 300ms; } .delay-400 { animation-delay: 400ms; } .delay-500 { animation-delay: 500ms; } .delay-700 { animation-delay: 700ms; }
 
 /* --- Glassmorphism --- */
-.glass {
-  background: rgba(255, 254, 249, 0.72);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.glass { background: rgba(255, 254, 249, 0.72); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255, 255, 255, 0.3); }
+
+/* --- Patrón Hexagonal Sutil --- */
+.hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='52' viewBox='0 0 60 52' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%23d4952a' stroke-width='0.3' opacity='0.08'/%3E%3C/svg%3E");
+  background-size: 60px 52px;
 }
 
-.glass-dark {
-  background: rgba(26, 22, 18, 0.75);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+/* --- Textura Papel Artesanal --- */
+.paper-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
 }
 
-/* --- Imágenes Placeholder Premium --- */
+/* --- Transición Gota de Miel (wave divider) --- */
+.honey-wave {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+.honey-wave svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+@media (min-width: 640px) { .honey-wave svg { height: 80px; } }
+@media (min-width: 1024px) { .honey-wave svg { height: 100px; } }
+
+/* --- Imágenes Placeholder --- */
 .img-placeholder {
   background: linear-gradient(135deg, #f5f0e8 0%, #ede5d8 50%, #e2d3c0 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #8b7355;
-  font-size: 0.875rem;
-  font-weight: 500;
+  display: flex; align-items: center; justify-content: center;
+  color: #8b7355; font-size: 0.875rem; font-weight: 500;
 }
 
-/* --- Focus Visible --- */
-:focus-visible {
-  outline: 2px solid #d4952a;
-  outline-offset: 3px;
-  border-radius: 4px;
-}
-
-/* --- Skip Link --- */
-.skip-link {
-  position: absolute;
-  top: -100%;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100;
-  padding: 12px 24px;
-  background: #2d3d20;
-  color: white;
-  font-weight: 600;
-  border-radius: 0 0 8px 8px;
-  transition: top 0.2s;
-}
+/* --- Focus & Skip --- */
+:focus-visible { outline: 2px solid #d4952a; outline-offset: 3px; border-radius: 4px; }
+.skip-link { position: absolute; top: -100%; left: 50%; transform: translateX(-50%); z-index: 100; padding: 12px 24px; background: #2d3d20; color: white; font-weight: 600; border-radius: 0 0 8px 8px; transition: top 0.2s; }
 .skip-link:focus { top: 0; }
 
-/* --- Secciones --- */
-section[id] {
-  scroll-margin-top: 80px;
-}
-
-/* --- Prose Width --- */
-.prose-width {
-  max-width: 65ch;
-}
+section[id] { scroll-margin-top: 80px; }
+.prose-width { max-width: 65ch; }
 
 /* --- Botones Premium --- */
-.btn-primary {
-  @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase text-white rounded-full transition-all duration-500 min-h-[52px];
-  background: linear-gradient(135deg, #d4952a 0%, #b87a1e 100%);
-  box-shadow: 0 4px 15px rgba(212, 149, 42, 0.3), 0 1px 3px rgba(0,0,0,0.1);
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(212, 149, 42, 0.4), 0 2px 6px rgba(0,0,0,0.15);
-  background: linear-gradient(135deg, #e0a532 0%, #c88a24 100%);
-}
-.btn-primary:active {
-  transform: translateY(0);
-}
+.btn-primary { @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase text-white rounded-full transition-all duration-700 min-h-[52px]; background: linear-gradient(135deg, #d4952a 0%, #b87a1e 100%); box-shadow: 0 4px 15px rgba(212, 149, 42, 0.3), 0 1px 3px rgba(0,0,0,0.1); }
+.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(212, 149, 42, 0.4), 0 4px 10px rgba(0,0,0,0.15); background: linear-gradient(135deg, #e0a532 0%, #c88a24 100%); }
+.btn-secondary { @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-full transition-all duration-700 min-h-[52px]; color: #faf8f4; border: 1.5px solid rgba(250, 248, 244, 0.5); background: rgba(250, 248, 244, 0.08); }
+.btn-secondary:hover { background: rgba(250, 248, 244, 0.15); border-color: rgba(250, 248, 244, 0.8); transform: translateY(-3px); }
+.btn-outline { @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-full transition-all duration-700 min-h-[52px]; color: #4a3d2d; border: 1.5px solid #ddd2c0; background: transparent; }
+.btn-outline:hover { border-color: #d4952a; color: #d4952a; transform: translateY(-3px); }
+.btn-whatsapp { @apply inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-semibold tracking-wide text-white rounded-full transition-all duration-700 min-h-[52px]; background: linear-gradient(135deg, #25D366 0%, #128C7E 100%); box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+.btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4); }
+.btn-email { @apply inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-semibold tracking-wide rounded-full transition-all duration-700 min-h-[52px]; color: #4a3d2d; border: 1.5px solid #ddd2c0; background: white; }
+.btn-email:hover { border-color: #d4952a; color: #d4952a; transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.08); }
 
-.btn-secondary {
-  @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-full transition-all duration-500 min-h-[52px];
-  color: #faf8f4;
-  border: 1.5px solid rgba(250, 248, 244, 0.5);
-  background: rgba(250, 248, 244, 0.08);
-}
-.btn-secondary:hover {
-  background: rgba(250, 248, 244, 0.15);
-  border-color: rgba(250, 248, 244, 0.8);
-  transform: translateY(-2px);
-}
+/* --- Cards --- */
+.card-premium { background: white; border-radius: 1.5rem; border: 1px solid rgba(237, 229, 216, 0.6); box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.03); transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.card-premium:hover { box-shadow: 0 12px 50px rgba(0,0,0,0.1), 0 4px 12px rgba(0,0,0,0.05); transform: translateY(-6px); }
 
-.btn-outline {
-  @apply inline-flex items-center justify-center gap-2 px-8 py-4 text-sm font-semibold tracking-wide uppercase rounded-full transition-all duration-500 min-h-[52px];
-  color: #4a3d2d;
-  border: 1.5px solid #ddd2c0;
-  background: transparent;
-}
-.btn-outline:hover {
-  border-color: #d4952a;
-  color: #d4952a;
-  transform: translateY(-2px);
-}
+/* --- Divisor --- */
+.divider-elegant { width: 60px; height: 2px; background: linear-gradient(90deg, transparent, #d4952a, transparent); margin: 1.5rem auto; }
 
-.btn-whatsapp {
-  @apply inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-semibold tracking-wide text-white rounded-full transition-all duration-500 min-h-[52px];
-  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
-}
-.btn-whatsapp:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
-}
+/* --- Tag visual producto --- */
+.product-tag { @apply inline-flex items-center gap-1.5 px-3 py-1.5 text-[10px] font-semibold tracking-[0.15em] uppercase rounded-full; background: rgba(250, 248, 244, 0.8); color: #6b5840; border: 1px solid rgba(221, 210, 192, 0.5); backdrop-filter: blur(8px); }
 
-.btn-email {
-  @apply inline-flex items-center justify-center gap-2.5 px-8 py-4 text-sm font-semibold tracking-wide rounded-full transition-all duration-500 min-h-[52px];
-  color: #4a3d2d;
-  border: 1.5px solid #ddd2c0;
-  background: white;
-}
-.btn-email:hover {
-  border-color: #d4952a;
-  color: #d4952a;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
+/* --- Botones táctiles --- */
+button, a[role="button"], .btn-primary, .btn-secondary, .btn-outline, .btn-whatsapp, .btn-email { min-height: 44px; }
 
-/* --- Cards Premium --- */
-.card-premium {
-  background: white;
-  border-radius: 1.25rem;
-  border: 1px solid rgba(237, 229, 216, 0.6);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 20px rgba(0,0,0,0.03);
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.card-premium:hover {
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08), 0 2px 8px rgba(0,0,0,0.04);
-  transform: translateY(-4px);
-}
+@media (max-width: 480px) { .size-btn { min-height: 52px; font-size: 0.9375rem; } .trust-badges-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; } }
 
-/* --- Divisor elegante --- */
-.divider-elegant {
-  width: 60px;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #d4952a, transparent);
-  margin: 1.5rem auto;
-}
+.size-btn { @apply flex-1 min-w-[80px] px-4 py-3 text-sm font-medium text-center border rounded-xl transition-all duration-300 cursor-pointer bg-white; border-color: #ede5d8; }
+.size-btn:hover { border-color: #d4952a; background: #fefbf0; }
+.size-btn.active { border-color: #d4952a; background: linear-gradient(135deg, #fefbf0 0%, #fdf3d7 100%); color: #7a4e15; font-weight: 600; box-shadow: 0 0 0 3px rgba(212, 149, 42, 0.15); }
 
-/* --- Scroll reveal --- */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* --- Botones táctiles: mínimo 44x44px WCAG --- */
-button, a[role="button"], .btn-primary, .btn-secondary, .btn-outline, .btn-whatsapp, .btn-email {
-  min-height: 44px;
-}
-
-/* --- Responsive adjustments --- */
-@media (max-width: 480px) {
-  .size-btn {
-    min-height: 52px;
-    font-size: 0.9375rem;
-  }
-  .trust-badges-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
-  }
-}
-
-/* --- Selector de tamaños --- */
-.size-btn {
-  @apply flex-1 min-w-[80px] px-4 py-3 text-sm font-medium text-center border rounded-xl transition-all duration-300 cursor-pointer bg-white;
-  border-color: #ede5d8;
-}
-.size-btn:hover {
-  border-color: #d4952a;
-  background: #fefbf0;
-}
-.size-btn.active {
-  border-color: #d4952a;
-  background: linear-gradient(135deg, #fefbf0 0%, #fdf3d7 100%);
-  color: #7a4e15;
-  font-weight: 600;
-  box-shadow: 0 0 0 3px rgba(212, 149, 42, 0.15);
-}
-
-/* --- Precio --- */
-.price-highlight {
-  @apply font-display text-3xl sm:text-4xl font-bold;
-  color: #4a3d2d;
-}
-
-/* --- Badge stock --- */
-.badge-stock {
-  @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full;
-}
-.badge-stock.available {
-  background: #f4f7f0;
-  color: #384d27;
-  border: 1px solid #cddcbe;
-}
-
-/* --- Envío gratis --- */
-.free-shipping {
-  @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full;
-  background: #fefbf0;
-  color: #7a4e15;
-  border: 1px solid #fbe6aa;
-}
+.price-highlight { @apply font-display text-3xl sm:text-4xl font-bold; color: #4a3d2d; }
+.badge-stock { @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-semibold rounded-full; }
+.badge-stock.available { background: #f4f7f0; color: #384d27; border: 1px solid #cddcbe; }
+.free-shipping { @apply inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium rounded-full; background: #fefbf0; color: #7a4e15; border: 1px solid #fbe6aa; }

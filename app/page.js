@@ -3,10 +3,13 @@ import Story from '@/components/Story';
 import ProcessTimeline from '@/components/ProcessTimeline';
 import BeeEducation from '@/components/BeeEducation';
 import Products from '@/components/Products';
+import MielRobleSpecial from '@/components/MielRobleSpecial';
+import ConsumirMiel from '@/components/ConsumirMiel';
 import BeeLife from '@/components/BeeLife';
+import ServiciosApícolas from '@/components/ServiciosApícolas';
+import NuestroEntorno from '@/components/NuestroEntorno';
 import ApiarioMap from '@/components/ApiarioMap';
 import Testimonials from '@/components/Testimonials';
-import InstagramFeed from '@/components/InstagramFeed';
 import PaymentMethods from '@/components/PaymentMethods';
 import FAQ from '@/components/FAQ';
 import Footer from '@/components/Footer';
@@ -19,14 +22,18 @@ export default function Home() {
       <Hero />
 
       <main>
+        {/* Ritmo: Claro → Oscuro → Claro → Oscuro */}
         <Story />
         <ProcessTimeline />
         <BeeEducation />
         <Products />
+        <MielRobleSpecial />
+        <ConsumirMiel />
         <BeeLife />
+        <ServiciosApícolas />
+        <NuestroEntorno />
         <ApiarioMap />
         <Testimonials />
-        <InstagramFeed />
         <PaymentMethods />
         <FAQ />
       </main>
