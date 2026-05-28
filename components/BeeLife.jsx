@@ -25,9 +25,10 @@ export default function BeeLife() {
         </div>
 
         {/* Video destacado */}
-        <div className="mb-10 rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-video bg-gradient-to-br from-earth-800 to-earth-900 relative group cursor-pointer">
-          <div className="absolute inset-0 img-placeholder opacity-30"><div className="text-center"><span className="text-5xl block mb-3">🎬</span><p className="text-sm text-cream-300/40">/videos/padre-trabajando.mp4</p></div></div>
-          <div className="absolute inset-0 flex items-center justify-center"><div className="w-20 h-20 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/25 transition-all duration-700 group-hover:scale-110"><svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg></div></div>
+        <div className="mb-10 rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-video bg-gradient-to-br from-earth-800 to-earth-900 relative group">
+          <video src="/videos/padre-trabajando.mp4" autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
+          <div className="absolute bottom-4 left-4 z-10"><p className="text-sm font-medium text-white drop-shadow-md">Salvador Cañón trabajando en las colmenas</p></div>
         </div>
 
         {/* Grid galería */}
@@ -42,10 +43,10 @@ export default function BeeLife() {
         </div>
 
         {/* Segundo video */}
-        <div className="mt-8 rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-[21/9] bg-gradient-to-br from-forest-800 to-forest-900 relative group cursor-pointer">
-          <div className="absolute inset-0 img-placeholder opacity-25"><div className="text-center"><span className="text-4xl block mb-2">🍯</span><p className="text-sm text-cream-300/40">/videos/extraccion-miel.mp4</p></div></div>
-          <div className="absolute inset-0 flex items-center justify-center"><div className="w-16 h-16 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/25 transition-all duration-700 group-hover:scale-110"><svg className="w-6 h-6 text-white ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg></div></div>
-        </div>
+        <div className="mt-8 rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-[21/9] bg-gradient-to-br from-forest-800 to-forest-900 relative group">
+          <video src="/videos/extraccion-miel.mp4" autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
+          <div className="absolute bottom-4 left-4 z-10"><p className="text-sm font-medium text-white drop-shadow-md">Extracción artesanal de miel</p></div>
       </div>
     </section>
   );
