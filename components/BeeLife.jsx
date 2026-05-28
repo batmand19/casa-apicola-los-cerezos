@@ -40,7 +40,6 @@ export default function BeeLife() {
             </figure>
           ))}
         </div>
-        </div>
 
         {/* Segundo video */}
         <div className="mt-8 rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-[21/9] bg-gradient-to-br from-forest-800 to-forest-900 relative group cursor-pointer">

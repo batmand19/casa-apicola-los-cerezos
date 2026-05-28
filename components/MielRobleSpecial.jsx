@@ -21,7 +21,6 @@ export default function MielRobleSpecial() {
               Edición exclusiva
             </div>
           </div>
-          </div>
 
           {/* Contenido */}
           <div>
