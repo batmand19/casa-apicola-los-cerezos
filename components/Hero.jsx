@@ -32,11 +32,11 @@ export default function Hero() {
         <div className="absolute inset-0" aria-hidden="true">
           <div className="absolute inset-0 bg-gradient-to-br from-earth-900 via-earth-800 to-forest-900" />
           <div className="absolute inset-0 hex-pattern opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/50" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-honey-500/6 rounded-full blur-[150px] animate-breathe" />
           <div className="absolute bottom-0 right-0 w-[600px] h-[400px] bg-forest-500/5 rounded-full blur-[120px]" />
           {/* Imagen de fondo hero */}
-          <div className="absolute inset-0">
+          <div className="absolute inset-0 opacity-35 blur-[3px] scale-105">
             <OptimizedImage src="/images/hero-apiario.jpg" alt="Apiario en las montañas de Caldas" aspect="16/9" fallbackIcon="🍯" fallbackLabel="Apiario" priority />
           </div>
         </div>
