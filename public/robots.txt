@@ -8,7 +8,7 @@ Disallow: /_next/
 
 # Bloquear suscripción/newsletter (se vende como PDF/EPUB)
 # La guía de recetas y usos se comercializa como producto digital de pago
-Disallow: /guia-recetas
+Disallow: /guia-digital
 Disallow: /newsletter
 Disallow: /suscripcion
 

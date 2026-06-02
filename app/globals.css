@@ -21,10 +21,6 @@ body { font-family: 'Inter', system-ui, sans-serif; color: #2c2416; background-c
   --color-miel-50: #fefbf0; --color-miel-100: #fdf3d7; --color-miel-200: #fbe6aa; --color-miel-300: #f8d47a; --color-miel-400: #f0b842; --color-miel-500: #d4952a; --color-miel-600: #b87a1e; --color-miel-700: #956018; --color-miel-800: #7a4e15; --color-miel-900: #5c3a0f;
   --color-tierra-50: #faf6f1; --color-tierra-100: #f0e8dc; --color-tierra-200: #e2d3c0; --color-tierra-300: #c9b49a; --color-tierra-400: #b09478; --color-tierra-500: #8b7355; --color-tierra-600: #6b5840; --color-tierra-700: #4a3d2d; --color-tierra-800: #352b20; --color-tierra-900: #221c15;
   --color-bosque-50: #f4f7f0; --color-bosque-100: #e6edde; --color-bosque-200: #cddcbe; --color-bosque-300: #a8c28e; --color-bosque-400: #7da55e; --color-bosque-500: #5a7a3e; --color-bosque-600: #466130; --color-bosque-700: #384d27; --color-bosque-800: #2d3d20; --color-bosque-900: #1e2a16;
-  --color-honey-50: #fefbf0; --color-honey-100: #fdf3d7; --color-honey-200: #fbe6aa; --color-honey-300: #f8d47a; --color-honey-400: #f0b842; --color-honey-500: #d4952a; --color-honey-600: #b87a1e; --color-honey-700: #956018; --color-honey-800: #7a4e15; --color-honey-900: #5c3a0f;
-  --color-forest-50: #f4f7f0; --color-forest-100: #e6edde; --color-forest-200: #cddcbe; --color-forest-300: #a8c28e; --color-forest-400: #7da55e; --color-forest-500: #5a7a3e; --color-forest-600: #466130; --color-forest-700: #384d27; --color-forest-800: #2d3d20; --color-forest-900: #1e2a16;
-  --color-earth-50: #faf6f1; --color-earth-100: #f0e8dc; --color-earth-200: #e2d3c0; --color-earth-300: #c9b49a; --color-earth-400: #b09478; --color-earth-500: #8b7355; --color-earth-600: #6b5840; --color-earth-700: #4a3d2d; --color-earth-800: #352b20; --color-earth-900: #221c15;
-  --color-warm-white: #fffef9; --color-soft-black: #1a1612;
 }
 
 /* --- Animaciones Cinematográficas (lentas, elegantes) --- */

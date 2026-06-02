@@ -12,6 +12,7 @@ import ApiarioMap from '@/components/ApiarioMap';
 import Testimonials from '@/components/Testimonials';
 import PaymentMethods from '@/components/PaymentMethods';
 import FAQ from '@/components/FAQ';
+import LeadMagnet from '@/components/LeadMagnet';
 import Footer from '@/components/Footer';
 
 export default function Home() {
@@ -36,6 +37,7 @@ export default function Home() {
         <Testimonials />
         <PaymentMethods />
         <FAQ />
+        <LeadMagnet />
       </main>
 
       <Footer />

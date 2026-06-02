@@ -6,7 +6,7 @@ import { trackEmailOrder } from '@/lib/tracking';
  * CONFIGURACIÓN — Reemplazar con datos reales:
  * EMAIL_VENTAS: Correo electrónico de ventas de Casa Apícola Los Cerezos
  */
-const EMAIL_VENTAS = 'ventas@casaapicolaloscercez.com'; // ← CORREO REAL
+const EMAIL_VENTAS = 'ventas@casapicolaloscercez.com'; // ← CORREO REAL
 
 /**
  * Botón "Pedir por correo" como alternativa a WhatsApp.

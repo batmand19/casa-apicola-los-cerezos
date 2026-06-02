@@ -1,8 +1,8 @@
-import Script from 'next/script';
 import './globals.css';
 import Header from '@/components/Header';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import { getGAScript, isGAEnabled } from '@/lib/ga';
+import NewsletterPopup from '@/components/NewsletterPopup';
+import GaScript from '@/components/GaScript';
 import { organizationSchema } from '@/lib/schema';
 
 const SITE_URL = 'https://casapicolaloscercez.com';
@@ -17,24 +17,22 @@ export const metadata = {
   alternates: { canonical: SITE_URL },
   openGraph: { title: 'Casa Apícola Los Cerezos | Miel Pura Artesanal', description: 'Miel y polen de abejas Apis mellifera. Más de 30 años de tradición familiar.', url: SITE_URL, images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630 }], locale: 'es_CO', type: 'website' },
   twitter: { card: 'summary_large_image', title: 'Casa Apícola Los Cerezos | Miel Pura Artesanal', description: 'Miel y polen de abejas Apis mellifera. Tradición familiar de más de 30 años.' },
+  other: {
+    'manifest': '/manifest.json',
+    'theme-color': '#d4952a',
+    'apple-mobile-web-app-capable': 'yes',
+    'apple-mobile-web-app-status-bar-style': 'default',
+    'apple-mobile-web-app-title': 'Los Cerezos',
+  },
 };
 
 export default function RootLayout({ children }) {
-  const gaScript = getGAScript();
   const orgSchema = organizationSchema();
 
   return (
     <html lang="es" className="scroll-smooth">
       <head>
-        {isGAEnabled() && gaScript && (
-          <Script src={gaScript.src} strategy={gaScript.strategy} onLoad={() => {
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { window.dataLayer.push(arguments); }
-            window.gtag = gtag;
-            gtag('js', new Date());
-            gtag('config', process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID);
-          }} />
-        )}
+        <GaScript />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -43,6 +41,7 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="pt-0">{children}</div>
         <WhatsAppButton />
+        <NewsletterPopup />
       </body>
     </html>
   );

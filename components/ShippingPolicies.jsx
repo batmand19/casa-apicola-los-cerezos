@@ -27,7 +27,7 @@ export default function ShippingPolicies() {
             <p className="font-semibold text-earth-800 mb-2">Devoluciones</p>
             <p>Cambios o devoluciones dentro de <strong>5 días</strong>, frasco <strong>sin abrir</strong> y en <strong>empaque original</strong>.</p>
           </div>
-          <p className="text-xs text-earth-400">Contáctanos a <a href="mailto:ventas@casaapicolaloscercez.com" className="text-honey-600 hover:text-honey-700 underline">ventas@casaapicolaloscercez.com</a> o por <a href="https://wa.me/573208065008" className="text-honey-600 hover:text-honey-700 underline" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
+          <p className="text-xs text-earth-400">Contáctanos a <a href="mailto:ventas@casapicolaloscercez.com" className="text-honey-600 hover:text-honey-700 underline">ventas@casapicolaloscercez.com</a> o por <a href="https://wa.me/573208065008" className="text-honey-600 hover:text-honey-700 underline" target="_blank" rel="noopener noreferrer">WhatsApp</a>.</p>
         </div>
       )}
     </div>

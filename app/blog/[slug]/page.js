@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ARTICLES } from '@/data/articles';
 import { articleSchema, breadcrumbSchema } from '@/lib/schema';
 import BlogArticleImage from '@/components/BlogArticleImage';
+import ShareButtons from '@/components/ShareButtons';
 
 const SITE_URL = 'https://casapicolaloscercez.com';
 
@@ -142,6 +143,11 @@ export default function ArticlePage({ params }) {
             {article.content.map((block, i) => (
               <ContentBlock key={i} block={block} />
             ))}
+          </div>
+
+          {/* Compartir */}
+          <div className="mt-8">
+            <ShareButtons title={article.title} url={`/blog/${article.slug}`} />
           </div>
 
           {/* CTA */}
