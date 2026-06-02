@@ -1,10 +1,11 @@
 import './globals.css';
 import Header from '@/components/Header';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import CartDrawer from '@/components/CartDrawer';
 import GaScript from '@/components/GaScript';
 import { organizationSchema } from '@/lib/schema';
 
-const SITE_URL = 'https://casapicolaloscercez.com';
+const SITE_URL = 'https://casa-apicola-los-cerezos.vercel.app';
 
 export const metadata = {
   metadataBase: new URL(SITE_URL),
@@ -39,6 +40,7 @@ export default function RootLayout({ children }) {
       <body className="antialiased bg-cream-100 text-earth-800 font-body">
         <Header />
         <div className="pt-0">{children}</div>
+        <CartDrawer />
         <WhatsAppButton />
       </body>
     </html>

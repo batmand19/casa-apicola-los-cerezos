@@ -1,5 +1,5 @@
 ﻿# Robots.txt - Casa Apícola Los Cerezos
-# https://casapicolaloscercez.com
+# https://casa-apicola-los-cerezos.vercel.app
 
 User-agent: *
 Allow: /
@@ -13,4 +13,4 @@ Disallow: /newsletter
 Disallow: /suscripcion
 
 # Sitemap
-Sitemap: https://casapicolaloscercez.com/sitemap.xml
+Sitemap: https://casa-apicola-los-cerezos.vercel.app/sitemap.xml

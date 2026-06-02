@@ -1,19 +1,21 @@
+import dynamic from 'next/dynamic';
 import Hero from '@/components/Hero';
-import Story from '@/components/Story';
-import ProcessTimeline from '@/components/ProcessTimeline';
-import BeeEducation from '@/components/BeeEducation';
-import Products from '@/components/Products';
-import MielRobleSpecial from '@/components/MielRobleSpecial';
-import ConsumirMiel from '@/components/ConsumirMiel';
-import BeeLife from '@/components/BeeLife';
-import ServiciosApícolas from '@/components/ServiciosApícolas';
-import NuestroEntorno from '@/components/NuestroEntorno';
-import ApiarioMap from '@/components/ApiarioMap';
-import Testimonials from '@/components/Testimonials';
-import PaymentMethods from '@/components/PaymentMethods';
-import FAQ from '@/components/FAQ';
-import LeadMagnet from '@/components/LeadMagnet';
 import Footer from '@/components/Footer';
+
+const Story = dynamic(() => import('@/components/Story'), { ssr: false, loading: () => <div className="h-24" /> });
+const ProcessTimeline = dynamic(() => import('@/components/ProcessTimeline'), { ssr: false, loading: () => <div className="h-24" /> });
+const BeeEducation = dynamic(() => import('@/components/BeeEducation'), { ssr: false, loading: () => <div className="h-24" /> });
+const Products = dynamic(() => import('@/components/Products'), { ssr: false, loading: () => <div className="h-64" /> });
+const MielRobleSpecial = dynamic(() => import('@/components/MielRobleSpecial'), { ssr: false, loading: () => <div className="h-24" /> });
+const ConsumirMiel = dynamic(() => import('@/components/ConsumirMiel'), { ssr: false, loading: () => <div className="h-24" /> });
+const BeeLife = dynamic(() => import('@/components/BeeLife'), { ssr: false, loading: () => <div className="h-24" /> });
+const ServiciosApícolas = dynamic(() => import('@/components/ServiciosAp\u00edcolas'), { ssr: false, loading: () => <div className="h-24" /> });
+const NuestroEntorno = dynamic(() => import('@/components/NuestroEntorno'), { ssr: false, loading: () => <div className="h-24" /> });
+const ApiarioMap = dynamic(() => import('@/components/ApiarioMap'), { ssr: false, loading: () => <div className="h-24" /> });
+const Testimonials = dynamic(() => import('@/components/Testimonials'), { ssr: false, loading: () => <div className="h-24" /> });
+const PaymentMethods = dynamic(() => import('@/components/PaymentMethods'), { ssr: false, loading: () => <div className="h-24" /> });
+const FAQ = dynamic(() => import('@/components/FAQ'), { ssr: false, loading: () => <div className="h-24" /> });
+const LeadMagnet = dynamic(() => import('@/components/LeadMagnet'), { ssr: false, loading: () => <div className="h-24" /> });
 
 export default function Home() {
   return (

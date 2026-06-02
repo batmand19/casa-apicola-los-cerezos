@@ -5,7 +5,7 @@ import { articleSchema, breadcrumbSchema } from '@/lib/schema';
 import BlogArticleImage from '@/components/BlogArticleImage';
 import ShareButtons from '@/components/ShareButtons';
 
-const SITE_URL = 'https://casapicolaloscercez.com';
+const SITE_URL = 'https://casa-apicola-los-cerezos.vercel.app';
 
 export function generateStaticParams() {
   return ARTICLES.map((article) => ({ slug: article.slug }));

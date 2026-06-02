@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { trackClick, trackMobileMenu } from '@/lib/tracking';
+import { getCartCount } from '@/lib/cart';
 
 const NAV_ITEMS = [
   { href: '#hero', label: 'Inicio' },
@@ -15,6 +16,7 @@ const HEADER_HEIGHT = 80;
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [cartCount, setCartCount] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -26,6 +28,13 @@ export default function Header() {
     const handleResize = () => { if (window.innerWidth >= 768) setIsMobileMenuOpen(false); };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    const refresh = () => setCartCount(getCartCount());
+    refresh();
+    window.addEventListener('cart-updated', refresh);
+    return () => window.removeEventListener('cart-updated', refresh);
   }, []);
 
   const handleNavClick = (e, href, label) => {
@@ -67,6 +76,20 @@ export default function Header() {
           </nav>
 
           <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('open-cart'))}
+              className="relative w-10 h-10 flex items-center justify-center rounded-full transition-colors min-h-[44px]"
+              aria-label={`Abrir carrito${cartCount > 0 ? `, ${cartCount} items` : ''}`}
+            >
+              <svg className={`w-5 h-5 transition-colors duration-300 ${isScrolled ? 'text-earth-600' : 'text-white'}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z" />
+              </svg>
+              {cartCount > 0 && (
+                <span className="absolute -top-1 -right-1 w-5 h-5 flex items-center justify-center text-[10px] font-bold text-white bg-honey-500 rounded-full shadow-sm">
+                  {cartCount}
+                </span>
+              )}
+            </button>
             <a href="#productos" onClick={(e) => handleNavClick(e, '#productos', 'Productos')} className={`px-6 py-2.5 text-[13px] font-semibold tracking-wide rounded-full transition-all duration-300 min-h-[44px] flex items-center ${isScrolled ? 'text-white bg-gradient-to-r from-honey-500 to-honey-600 hover:from-honey-600 hover:to-honey-700 shadow-md shadow-honey-500/20' : 'text-earth-800 bg-white/90 hover:bg-white shadow-md'}`}>
               Comprar
             </a>
@@ -90,7 +113,7 @@ export default function Header() {
                 {item.label}
               </a>
             ))}
-            <a href="#productos" onClick={(e) => handleNavClick(e, '#productos', 'Productos')} className="block px-4 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-honey-500 to-honey-600 rounded-xl text-center mt-3 min-h-[48px] flex items-center justify-center">
+            <a href="#productos" onClick={(e) => { handleNavClick(e, '#productos', 'Productos'); setIsMobileMenuOpen(false); }} className="block px-4 py-3.5 text-base font-semibold text-white bg-gradient-to-r from-honey-500 to-honey-600 rounded-xl text-center mt-3 min-h-[48px] flex items-center justify-center">
               Comprar ahora
             </a>
           </nav>

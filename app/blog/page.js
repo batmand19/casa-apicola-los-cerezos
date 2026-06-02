@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { ARTICLES } from '@/data/articles';
 import BlogGrid from '@/components/BlogGrid';
 
-const SITE_URL = 'https://casapicolaloscercez.com';
+const SITE_URL = 'https://casa-apicola-los-cerezos.vercel.app';
 
 export const metadata = {
   title: 'Blog | Educación sobre miel y abejas Meliphera',

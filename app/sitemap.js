@@ -1,6 +1,6 @@
 import { ARTICLES } from '@/data/articles';
 
-const SITE_URL = 'https://casapicolaloscercez.com';
+const SITE_URL = 'https://casa-apicola-los-cerezos.vercel.app';
 
 export default function sitemap() {
   const staticPages = [

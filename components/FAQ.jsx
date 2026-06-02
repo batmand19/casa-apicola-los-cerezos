@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 const FAQ_ITEMS = [
   { q: '¿Cómo sé que recibiré mi pedido?', a: 'Te confirmamos disponibilidad y precio antes de que pagues. Solo procedes después de nuestra confirmación.' },
-  { q: '¿Qué pasa si no tengo WhatsApp?', a: 'Escríbenos a ventas@casapicolaloscercez.com. Resolvemos todo por correo.' },
+  { q: '¿Qué pasa si no tengo WhatsApp?', a: 'Escríbenos a hcanon@unal.edu.co. Resolvemos todo por correo.' },
   { q: '¿La guía digital llega por correo?', a: 'Sí. Tras confirmar el pago, enviamos PDF y EPUB por WhatsApp o correo en menos de 24 horas.' },
   { q: '¿Puedo pagar contraentrega?', a: 'Sí, solo para envíos dentro de Caldas y Boyacá. En otras ciudades: transferencia o Nequi.' },
   { q: '¿Cuánto tarda el envío?', a: 'Bogotá y ciudades principales: 3-5 días hábiles. Caldas-Boyacá: 1-3 días. Zonas rurales: 5-8 días.' },
