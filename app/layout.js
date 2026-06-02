@@ -1,7 +1,6 @@
 import './globals.css';
 import Header from '@/components/Header';
 import WhatsAppButton from '@/components/WhatsAppButton';
-import NewsletterPopup from '@/components/NewsletterPopup';
 import GaScript from '@/components/GaScript';
 import { organizationSchema } from '@/lib/schema';
 
@@ -41,7 +40,6 @@ export default function RootLayout({ children }) {
         <Header />
         <div className="pt-0">{children}</div>
         <WhatsAppButton />
-        <NewsletterPopup />
       </body>
     </html>
   );

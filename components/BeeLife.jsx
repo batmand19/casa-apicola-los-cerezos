@@ -34,13 +34,13 @@ export default function BeeLife() {
         {/* Video destacado — click para ampliar con audio */}
         <div
           className="mb-10 rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-video bg-gradient-to-br from-earth-800 to-earth-900 relative group cursor-pointer"
-          onClick={() => setVideoLightbox({ src: '/videos/padre-trabajando.mp4', caption: 'Salvador Cañón trabajando en las colmenas' })}
+          onClick={() => setVideoLightbox({ src: '/videos/padre-trabajando.webm', caption: 'Salvador Cañón trabajando en las colmenas' })}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => e.key === 'Enter' && setVideoLightbox({ src: '/videos/padre-trabajando.mp4', caption: 'Salvador Cañón trabajando en las colmenas' })}
+          onKeyDown={(e) => e.key === 'Enter' && setVideoLightbox({ src: '/videos/padre-trabajando.webm', caption: 'Salvador Cañón trabajando en las colmenas' })}
           aria-label="Reproducir video: Salvador Cañón trabajando en las colmenas"
         >
-          <video src="/videos/padre-trabajando.mp4" autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover" />
+          <video src="/videos/padre-trabajando.webm" autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500">
@@ -79,13 +79,13 @@ export default function BeeLife() {
         {/* Segundo video — click para ampliar con audio */}
         <div
           className="mt-8 rounded-3xl overflow-hidden shadow-2xl shadow-black/30 aspect-[21/9] bg-gradient-to-br from-forest-800 to-forest-900 relative group cursor-pointer"
-          onClick={() => setVideoLightbox({ src: '/videos/extraccion-miel.mp4', caption: 'Extracción artesanal de miel' })}
+          onClick={() => setVideoLightbox({ src: '/videos/extraccion-miel.webm', caption: 'Extracción artesanal de miel' })}
           role="button"
           tabIndex={0}
-          onKeyDown={(e) => e.key === 'Enter' && setVideoLightbox({ src: '/videos/extraccion-miel.mp4', caption: 'Extracción artesanal de miel' })}
+          onKeyDown={(e) => e.key === 'Enter' && setVideoLightbox({ src: '/videos/extraccion-miel.webm', caption: 'Extracción artesanal de miel' })}
           aria-label="Reproducir video: Extracción artesanal de miel"
         >
-          <video src="/videos/extraccion-miel.mp4" autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover" />
+          <video src="/videos/extraccion-miel.webm" autoPlay muted loop playsInline preload="metadata" className="absolute inset-0 w-full h-full object-cover" />
           <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500" />
           <div className="absolute inset-0 flex items-center justify-center z-10">
             <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center group-hover:bg-white/25 group-hover:scale-110 transition-all duration-500">
