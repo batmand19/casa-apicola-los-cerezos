@@ -10,8 +10,9 @@ export function generateStaticParams() {
   return PRODUCTS.map((product) => ({ slug: product.id }));
 }
 
-export function generateMetadata({ params }: { params: { slug: string } }) {
-  const product = PRODUCTS.find((p) => p.id === params.slug);
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = PRODUCTS.find((p) => p.id === slug);
   if (!product) return {};
 
   const lowestPrice = Math.min(...product.sizes.map((s) => s.price));
@@ -19,7 +20,7 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
 
   return {
     title: `${product.name} | Casa Apícola Los Cerezos`,
-    description: `${product.description.sabor}. ${product.description.usos} Envíos a toda Colombia.`,
+    description: `${product.description.sensory.sabor}. ${product.description.usos} Envíos a toda Colombia.`,
     openGraph: {
       title: `${product.name} | Casa Apícola Los Cerezos`,
       description: product.description.usos,
@@ -39,8 +40,9 @@ export function generateMetadata({ params }: { params: { slug: string } }) {
   };
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
-  const product = PRODUCTS.find((p) => p.id === params.slug);
+export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = PRODUCTS.find((p) => p.id === slug);
   if (!product) notFound();
 
   const lowestPrice = Math.min(...product.sizes.map((s) => s.price));

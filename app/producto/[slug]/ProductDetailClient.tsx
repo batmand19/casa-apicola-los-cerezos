@@ -37,9 +37,12 @@ export default function ProductDetailClient({ product }: { product: Product }) {
         <OptimizedImage
           src={currentImage}
           alt={`${product.name} - ${selectedSize}`}
+          className=""
+          size="auto"
           aspect="4/3"
           fallbackIcon={product.category === 'Miel' ? '🍯' : '🌼'}
           fallbackLabel={product.name}
+          priority={false}
         />
         {product.badge && (
           <span className="absolute top-6 left-6 px-4 py-1.5 text-xs font-bold tracking-[0.15em] uppercase text-white bg-earth-800/80 backdrop-blur-sm rounded-full z-10">
