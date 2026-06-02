@@ -1,0 +1,233 @@
+/**
+ * Artículos del blog — Casa Apícola Los Cerezos
+ */
+
+import type { Article } from '@/types';
+
+export const ARTICLES: Article[] = [
+  {
+    slug: 'cristalizacion-miel-calidad',
+    title: '¿Por qué se cristaliza la miel? (Y por qué es una señal de calidad)',
+    metaTitle: '¿Por qué se cristaliza la miel? | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Descubre por qué la miel cristaliza y por qué esto es señal de pureza y calidad. Aprende a volverla líquida sin perder sus propiedades.',
+    date: '2026-05-15',
+    readTime: '4 min de lectura',
+    category: 'Educación',
+    image: '/images/blog/cristalizacion-miel.jpg',
+    imageAlt: 'Frasco de miel cristalizada de Casa Apícola Los Cerezos mostrando textura natural',
+    excerpt:
+      'La cristalización de la miel es un proceso natural que genera dudas. ¿Es mala señal? ¡Todo lo contrario! Te explicamos por qué la miel que cristaliza es miel pura.',
+    content: [
+      { type: 'paragraph', text: 'Si alguna vez abriste tu frasco de miel y encontraste una textura espesa o granulada, es probable que te hayas preguntado: ¿está bien? ¿Se dañó? La respuesta corta es no. La cristalización de la miel es un proceso completamente natural y, de hecho, es uno de los indicadores más confiables de que estás consumiendo miel pura.' },
+      { type: 'heading', text: '¿Qué es la cristalización de la miel?' },
+      { type: 'paragraph', text: 'La miel es una solución supersaturada de azúcares — principalmente glucosa y fructosa. Con el tiempo, la glucosa tiende a separarse de la solución y a formar cristales. Este es un proceso físico normal, no una reacción química que afecte la calidad del producto.' },
+      { type: 'tip', text: 'Nuestra miel Meliphera cristaliza de forma natural. Esto es garantía de que no ha sido ultraprocesada ni pasteurizada en exceso.' },
+      { type: 'heading', text: 'El mito de la "miel adulterada"' },
+      { type: 'paragraph', text: 'Existe una creencia popular de que la miel cristalizada fue adulterada o mezclada con azúcar. Esto es falso. En realidad, ocurre exactamente lo contrario: las mieles que NUNCA cristalizan suelen ser las que han sido ultraprocesadas, calentadas a temperaturas muy altas o mezcladas con jarabe de maíz.' },
+      { type: 'heading', text: '¿Cómo volver la miel líquida?' },
+      { type: 'paragraph', text: 'Si prefieres la textura líquida, puedes cristalizar la miel de forma segura:' },
+      { type: 'list', items: ['Coloca el frasco cerrado en un recipiente con agua tibia (no hirviendo).', 'Mantén el agua a una temperatura de 40-45°C durante 15-20 minutos.', 'Revuelve suavemente de vez en cuando para ayudar a disolver los cristales.', 'Nunca uses microondas: el calor excesivo destruye las enzimas y altera el sabor.', 'Nunca hiervas la miel: a partir de 60°C comienza a perder sus propiedades medicinales.'] },
+      { type: 'quote', text: 'La miel es uno de los pocos alimentos que no caduca jamás si se almacena correctamente. Incluso las mieles encontradas en tumbas egipcias de más de 3,000 años eran aún comestibles.' },
+    ],
+  },
+  {
+    slug: 'abejas-meliphera-ecosistemas-colombianos',
+    title: 'La importancia de las abejas Meliphera en los ecosistemas colombianos',
+    metaTitle: 'Abejas Meliphera: guardianas de los ecosistemas colombianos | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Conoce a las abejas Meliphera, abejas nativas sin aguijón que polinizan la flora andina. Descubre su rol en la conservación de páramos y bosques.',
+    date: '2026-04-20',
+    readTime: '5 min de lectura',
+    category: 'Conservación',
+    image: '/images/blog/abejas-meliphera.jpg',
+    imageAlt: 'Abejas Meliphera nativas sin aguijón en una flor de Arrayán del Páramo de Rabanal',
+    excerpt:
+      'Las abejas Meliphera son abejas nativas colombianas sin aguijón. Conoce su importancia ecológica y cómo la apicultura sostenible ayuda a protegerlas.',
+    content: [
+      { type: 'paragraph', text: 'Colombia es uno de los países con mayor biodiversidad del planeta, y en sus ecosistemas habita una criatura excepcional: la abeja Meliphera. Estas abejas nativas sin aguijón son protagonistas silenciosas pero fundamentales en la polinización de la flora de los Andes colombianos.' },
+      { type: 'heading', text: '¿Qué son las abejas Meliphera?' },
+      { type: 'paragraph', text: 'Las abejas Meliphera pertenecen a un grupo de abejas nativas de América del Sur que se caracterizan por no tener aguijón. A diferencia de las abejas europeas (Apis mellifera), las Meliphera han evolucionado durante millones de años en los ecosistemas tropicales andinos.' },
+      { type: 'heading', text: 'Diferencia con las abejas europeas' },
+      { type: 'list', items: ['Tamaño: las Meliphera son considerablemente más pequeñas.', 'Colonias: forman colonias más pequeñas (200-800 individuos).', 'Polinización: son polinizadoras más eficientes de flores nativas.', 'Comportamiento: son extremadamente dóciles.', 'Producción: una colonia produce entre 1 y 5 litros de miel al año.'] },
+      { type: 'tip', text: 'Cada frasco de nuestra miel contribuye directamente a la conservación de las abejas Meliphera y su ecosistema.' },
+    ],
+  },
+  {
+    slug: 'guia-usos-miel-cocina-medicina-belleza',
+    title: 'Guía de usos de la miel: cocina, medicinal y belleza',
+    metaTitle: 'Usos de la miel: cocina, salud y belleza | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Descubre todos los usos de la miel natural: recetas de cocina, remedios caseros para la salud y tratamientos de belleza.',
+    date: '2026-03-10',
+    readTime: '6 min de lectura',
+    category: 'Guías',
+    image: '/images/blog/usos-miel.jpg',
+    imageAlt: 'Miel natural de Casa Apícola Los Cerezos en diferentes usos',
+    excerpt:
+      'La miel es mucho más que un endulzante natural. Descubre cómo usarla en la cocina, para tu salud y en tus rutinas de belleza.',
+    content: [
+      { type: 'paragraph', text: 'La miel es uno de los alimentos más versátiles que existen. Durante miles de años, las civilizaciones han aprovechado sus propiedades nutricionales, medicinales y cosméticas.' },
+      { type: 'warning', text: 'Importante: No administrar miel a niños menores de 1 año.' },
+      { type: 'heading', text: 'Usos culinarios' },
+      { type: 'list', items: ['Aderezos para ensaladas', 'Glaseado para carnes', 'Acompañamiento para quesos', 'Postres'] },
+      { type: 'heading', text: 'Usos medicinales' },
+      { type: 'list', items: ['Alivio de garganta irritada', 'Fortalecimiento inmunológico', 'Energía natural', 'Propiedades antibacterianas'] },
+      { type: 'tip', text: 'Para mejores resultados, utiliza siempre miel cruda y sin procesar.' },
+    ],
+  },
+  // ── Nuevos artículos ──
+  {
+    slug: 'miel-vs-azucar-comparativa',
+    title: 'Miel vs azúcar: ¿cuál es realmente mejor para tu salud?',
+    metaTitle: 'Miel vs azúcar: comparativa real | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Comparativa completa entre miel natural y azúcar refinada. Descubre por qué la miel es una alternativa más saludable con beneficios comprobados.',
+    date: '2026-02-20',
+    readTime: '5 min de lectura',
+    category: 'Educación',
+    image: '/images/blog/miel-vs-azucar.jpg',
+    imageAlt: 'Comparativa visual entre miel natural y azúcar refinada',
+    excerpt:
+      'Azúcar vs miel: no es lo mismo endulzar con una que con otra. Analizamos composición, impacto en la salud y por qué la miel gana por goleada.',
+    content: [
+      { type: 'paragraph', text: 'Todos endulzamos. Pero no todos endulzamos igual. El azúcar refinada y la miel natural son dos mundos completamente diferentes, a pesar de que ambos sean dulces. En esta comparativa, analizamos qué dice la ciencia sobre cada uno.' },
+      { type: 'heading', text: 'Composición: ¿qué hay dentro?' },
+      { type: 'paragraph', text: 'El azúcar refinada es sacarosa al 99.7%. No tiene vitaminas, minerales, enzimas ni antioxidantes. Es calorías vacías. La miel, en cambio, contiene más de 200 sustancias: glucosa, fructosa, enzimas, aminoácidos, vitaminas del grupo B, minerales como hierro, zinc y potasio, y antioxidantes como los flavonoides.' },
+      { type: 'heading', text: 'Impacto en el azúcar en sangre' },
+      { type: 'paragraph', text: 'El índice glucémico del azúcar es 65. El de la miel varía entre 45 y 64 según la variedad, pero su composición de fructosa hace que se absorba más lentamente. Estudios publicados en el Journal of Medicinal Food muestran que la miel puede producir menor respuesta glucémica que el azúcar en personas sanas.' },
+      { type: 'heading', text: 'Propiedades antibacterianas' },
+      { type: 'paragraph', text: 'La miel cruda tiene propiedades antibacterianas documentadas gracias a su pH ácido (3.2-4.5), su contenido de peróxido de hidrógeno natural y sustancias como la metilglioxal. El azúcar no tiene ninguna de estas propiedades. De hecho, el exceso de azúcar refinada debilita el sistema inmunológico.' },
+      { type: 'tip', text: 'Al sustituir azúcar por miel, usa ¾ de la cantidad indicada y reduce otros líquidos de la receta. La miel es más dulce que el azúcar.' },
+      { type: 'heading', text: 'La miel no es "azúcar natural"' },
+      { type: 'paragraph', text: 'Un error común es pensar que la miel es simplemente "azúcar natural". La miel es un alimento complejo con componentes bioactivos que el azúcar refinada simplemente no tiene. Eso sí, sigue siendo un carbohidrato: modérate, pero elige bien tu fuente.' },
+      { type: 'quote', text: 'No se trata de no endulzar. Se trata de endulzar con algo que también te dé algo a cambio.' },
+    ],
+  },
+  {
+    slug: 'como-saber-si-miel-es-pura',
+    title: '¿Cómo saber si tu miel es pura? 5 pruebas caseras',
+    metaTitle: 'Cómo saber si tu miel es pura: 5 pruebas caseras | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Aprende a identificar miel pura vs adulterada con 5 pruebas sencillas que puedes hacer en casa. Protege tu salud eligiendo miel genuina.',
+    date: '2026-01-15',
+    readTime: '4 min de lectura',
+    category: 'Educación',
+    image: '/images/blog/miel-pura-pruebas.jpg',
+    imageAlt: 'Pruebas caseras para verificar la pureza de la miel',
+    excerpt:
+      'El mercado está lleno de miel adulterada. Estas 5 pruebas caseras te ayudarán a saber si la miel que compras es realmente pura.',
+    content: [
+      { type: 'paragraph', text: 'Según la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO), hasta el 30% de la miel vendida globalmente está adulterada con jarabe de maíz, caña de azúcar u otros endulzantes. Estas pruebas caseras no son definitivas, pero te darán una buena orientación.' },
+      { type: 'heading', text: 'Prueba 1: El papel de periódico' },
+      { type: 'paragraph', text: 'Coloca una cucharada de miel sobre un papel de periódico o una servilleta. Si la miel es pura, se mantendrá en forma de gota y no se absorberá rápidamente. Si se extiende y mancha el papel, probablemente tiene alto contenido de agua o está adulterada.' },
+      { type: 'heading', text: 'Prueba 2: El fósforo' },
+      { type: 'paragraph', text: 'Sumerge un fósforo en la miel y luego intenta encenderlo. Si la miel es pura y está seca en la superficie, el fósforo se encenderá. Si la miel tiene demasiada agua o está adulterada, el fósforo no encenderá porque la humedad lo apaga.' },
+      { type: 'heading', text: 'Prueba 3: La cuchara' },
+      { type: 'paragraph', text: 'Sumerge una cuchara de madera en el frasco y levántala. La miel pura cae en hilos continuos y se enrolla sobre sí misma al llegar al frasco. Si cae en gotas separadas o parece acuosa, probablemente no es pura.' },
+      { type: 'heading', text: 'Prueba 4: El agua' },
+      { type: 'paragraph', text: 'Vierte una cucharada de miel en un vaso de agua. La miel pura se va al fondo y se mantiene en forma de grumo. Si se disuelve rápidamente, tiene aditivos o está adulterada.' },
+      { type: 'heading', text: 'Prueba 5: La cristalización' },
+      { type: 'paragraph', text: 'La miel pura cristaliza con el tiempo. Si tu miel lleva meses o años en el estante y sigue líquida como el día que la compraste, probablemente ha sido ultraprocesada o adulterada con jarabe.' },
+      { type: 'tip', text: 'La mejor garantía de pureza es comprar directamente al apicultor. En Casa Apícola Los Cerezos, cada frasco viene de nuestros propios apiarios en las montañas de Caldas.' },
+    ],
+  },
+  {
+    slug: 'polen-abejas-beneficios',
+    title: 'Polen de abejas: el superalimento que estabas ignorando',
+    metaTitle: 'Polen de abejas: beneficios y usos | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Descubre los beneficios del polen de abejas como superalimento: proteínas, antioxidantes, vitaminas y minerales. Cómo consumirlo y dosis recomendada.',
+    date: '2025-12-10',
+    readTime: '5 min de lectura',
+    category: 'Salud',
+    image: '/images/blog/polen-beneficios.jpg',
+    imageAlt: 'Polen de abejas Meliphera de Casa Apícola Los Cerezos en cuchara de madera',
+    excerpt:
+      'El polen de abejas contiene más de 250 nutrientes activos. Es considerado uno de los alimentos más completos de la naturaleza. Te contamos todo sobre él.',
+    content: [
+      { type: 'paragraph', text: 'El polen de abejas es recolectado por las abejas obreras de las anteras de las flores. Cada grano de polen contiene toda la información genética de la planta y una cantidad impresionante de nutrientes que la naturaleza ha concentrado en un paquete diminuto.' },
+      { type: 'heading', text: 'Composición nutricional' },
+      { type: 'paragraph', text: 'El polen de abejas contiene entre un 20-30% de proteínas (con todos los aminoácidos esenciales), vitaminas del grupo B, vitamina C, vitamina D, minerales como hierro, zinc, magnesio y selenio, y más de 100 enzimas y coenzimas. También es rico en flavonoides y ácidos fenólicos con propiedades antioxidantes.' },
+      { type: 'heading', text: 'Beneficios documentados' },
+      { type: 'list', items: ['Refuerza el sistema inmunológico', 'Mejora la energía y la resistencia física', 'Apoya la salud digestiva por su efecto prebiótico', 'Tiene propiedades antiinflamatorias naturales', 'Puede mejorar la salud cardiovascular', 'Apoya la recuperación muscular en deportistas'] },
+      { type: 'heading', text: '¿Cómo consumirlo?' },
+      { type: 'paragraph', text: 'La dosis recomendada para adultos es de 1 a 2 cucharaditas al día. Puedes añadirla a yogures, batidos, ensaladas o consumirla directa. Es mejor empezar con media cucharadita e ir aumentando gradualmente.' },
+      { type: 'warning', text: 'Si eres alérgico al polen o a las picaduras de abejas, consulta a tu médico antes de consumir polen de abejas.' },
+      { type: 'tip', text: 'Nuestro polen se cosecha de forma sostenible en el Páramo de Rabanal, preservando la biodiversidad de la región cundiboyacense.' },
+    ],
+  },
+  {
+    slug: 'apicultura-sostenible-colombia',
+    title: 'Apicultura sostenible en Colombia: el futuro de la miel artesanal',
+    metaTitle: 'Apicultura sostenible en Colombia | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Conoce las prácticas de apicultura sostenible en Colombia y cómo protegen la biodiversidad, los páramos y las comunidades rurales.',
+    date: '2025-11-05',
+    readTime: '6 min de lectura',
+    category: 'Conservación',
+    image: '/images/blog/apicultura-sostenible.jpg',
+    imageAlt: 'Apicultor trabajando en un apiario sostenible en las montañas de Caldas',
+    excerpt:
+      'La apicultura sostenible no solo produce miel: protege ecosistemas, mantiene comunidades y guarda la biodiversidad de los Andes colombianos.',
+    content: [
+      { type: 'paragraph', text: 'Colombia tiene un potencial enorme para la apicultura sostenible. Con 52 millones de hectáreas de bosque y una biodiversidad sin igual, nuestro país es el escenario perfecto para una apicultura que respete la naturaleza y genere ingresos dignos para las comunidades rurales.' },
+      { type: 'heading', text: '¿Qué es la apicultura sostenible?' },
+      { type: 'paragraph', text: 'La apicultura sostenible es un sistema de producción que integra el manejo responsable de las abejas con la conservación del ecosistema. No se trata solo de producir miel, sino de hacerlo de forma que las abejas, el bosque y la comunidad salgan beneficiados.' },
+      { type: 'heading', text: 'Principios clave' },
+      { type: 'list', items: ['No usar antibióticos ni pesticidas en los apiarios', 'Dejar suficiente miel para que las colonias sobrevivan el invierno', 'Trabajar con especies nativas como la Meliphera', 'Mantener los apiarios en zonas de bosque nativo', 'Practicar la cosecha rotativa para no debilitar las colonias', 'Capacitar a las comunidades locales en manejo sostenible'] },
+      { type: 'heading', text: 'Impacto en los páramos' },
+      { type: 'paragraph', text: 'Los páramos colombianos son ecosistemas estratégicos que abastecen de agua a millones de personas. La apicultura sostenible en zonas de amortiguamiento de páramos ayuda a mantener la cobertura vegetal, polinizar especies nativas y generar economías alternativas que reducen la presión sobre estos ecosistemas.' },
+      { type: 'tip', text: 'En Casa Apícola Los Cerezos, practicamos apicultura sostenible desde hace más de 30 años. Cada frasco es prueba de que se puede producir miel de calidad sin destruir la naturaleza.' },
+    ],
+  },
+  {
+    slug: 'miel-para-deportistas',
+    title: 'Miel para deportistas: el energizante natural que deberías probar',
+    metaTitle: 'Miel para deportistas: energía natural | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Descubre por qué la miel es el mejor energizante natural para deportistas. Carbohidratos de absorción rápida, antioxidantes y sin aditivos artificiales.',
+    date: '2025-10-01',
+    readTime: '4 min de lectura',
+    category: 'Salud',
+    image: '/images/blog/miel-deportistas.jpg',
+    imageAlt: 'Atleta consumiendo miel como fuente de energía natural',
+    excerpt:
+      'Los atletas olímpicos usan miel como fuente de energía. Descubre por qué la miel es superior a los geles deportivos artificiales.',
+    content: [
+      { type: 'paragraph', text: 'Un dato que pocos conocen: la miel fue reconocida como alimento oficial de los Juegos Olímpicos de 2024. Esto no es casualidad. La ciencia del deporte ha descubierto lo que los apicultores llevan sabiendo desde hace siglos: la miel es una fuente de energía excepcional.' },
+      { type: 'heading', text: '¿Por qué la miel es mejor que los geles deportivos?' },
+      { type: 'paragraph', text: 'La miel contiene una combinación ideal de glucosa (absorción rápida) y fructosa (absorción más lenta), lo que proporciona energía sostenida durante más tiempo. Los geles deportivos artificiales suelen contener maltodextrina, colorantes y conservantes artificiales. La miel es 100% natural.' },
+      { type: 'heading', text: 'Beneficios para el rendimiento' },
+      { type: 'list', items: ['Energía de absorción rápida y sostenida', 'Antiinflamatorio natural: reduce la fatiga muscular', 'Antioxidantes que ayudan a la recuperación', 'Hidrata: contiene agua y electrolitos naturales', 'No causa malestar estomacal como algunos geles'] },
+      { type: 'heading', text: '¿Cómo usarla antes y después del ejercicio?' },
+      { type: 'paragraph', text: 'Antes del ejercicio: toma una cucharada de miel 15-30 minutos antes de entrenar. Durante el ejercicio (para actividades mayores a 90 minutos): lleva un frasco pequeño y toma una cucharada cada 45 minutos. Después del ejercicio: mezcla miel con agua y una pizca de sal para recuperar electrolitos.' },
+      { type: 'tip', text: 'Nuestra miel multifloral es ideal para deportistas: su sabor suave se mezcla bien con agua y no es empalagosa.' },
+    ],
+  },
+  {
+    slug: 'historia-apicultura-colombia',
+    title: 'Historia de la apicultura en Colombia: de la colonia a hoy',
+    metaTitle: 'Historia de la apicultura en Colombia | Casa Apícola Los Cerezos',
+    metaDescription:
+      'Recorre la historia de la apicultura en Colombia, desde la llegada de las abejas europeas en la colonia hasta la apicultura sostenible moderna.',
+    date: '2025-09-15',
+    readTime: '7 min de lectura',
+    category: 'Cultura',
+    image: '/images/blog/historia-apicultura.jpg',
+    imageAlt: 'Apiario tradicional colombiano en las montañas',
+    excerpt:
+      'La apicultura en Colombia tiene una historia de más de 500 años. Desde las primeras abejas europeas hasta las Meliphera nativas, un viaje por el tiempo.',
+    content: [
+      { type: 'paragraph', text: 'La historia de la apicultura en Colombia está íntimamente ligada a la historia del país. Cuando los españoles llegaron a estas tierras en el siglo XVI, trajeron consigo las abejas europeas (Apis mellifera), que encontraron un ecosistema perfecto para prosperar.' },
+      { type: 'heading', text: 'Las primeras abejas en Colombia' },
+      { type: 'paragraph', text: 'Se cree que las primeras abejas europeas llegaron a Colombia alrededor de 1570, traídas por los colonizadores españoles. Se establecieron primero en las zonas templadas de los Andes, donde el clima era similar al de Europa.' },
+      { type: 'heading', text: 'El auge del siglo XX' },
+      { type: 'paragraph', text: 'A mediados del siglo XX, la apicultura se convirtió en una actividad económica importante para muchas comunidades rurales colombianas. Los Departamentos de Boyacá, Cundinamarca, Santander y Antioquia se convirtieron en las principales zonas productoras.' },
+      { type: 'heading', text: 'La revolución de las Meliphera' },
+      { type: 'paragraph', text: 'En las últimas décadas, ha crecido el interés por las abejas nativas sin aguijón, especialmente la Meliphera. Estas abejas, que siempre estuvieron aquí, ahora son reconocidas como una alternativa sostenible y de bajo impacto para la apicultura en zonas sensibles como los páramos.' },
+      { type: 'paragraph', text: 'En Casa Apícola Los Cerezos, honramos esta tradición mientras miramos hacia el futuro. Nuestros abuelos empezaron con Apis mellifera; hoy, complementamos con Meliphera, practicando una apicultura que respeta tanto la tradición como la naturaleza.' },
+      { type: 'quote', text: 'La apicultura no es solo producir miel. Es guardar la tradición, proteger la biodiversidad y construir futuro para las comunidades rurales.' },
+    ],
+  },
+];

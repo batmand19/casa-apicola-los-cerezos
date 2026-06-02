@@ -13,7 +13,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: [],
-    include: ['**/*.test.{js,jsx}'],
+    include: ['**/*.test.{js,jsx,ts,tsx}'],
     exclude: ['node_modules', '.next'],
   },
 });

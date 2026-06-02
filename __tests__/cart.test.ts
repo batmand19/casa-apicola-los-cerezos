@@ -1,6 +1,5 @@
 import { describe, it, expect, beforeEach } from 'vitest';
 
-// jsdom provides a real localStorage, so we just use it directly
 const CART_KEY = 'casa_cerezos_cart';
 
 const { getCart, addToCart, removeFromCart, updateQuantity, getCartCount, getCartTotal, clearCart } = await import('../lib/cart');
@@ -61,5 +60,19 @@ describe('Cart utilities', () => {
     addToCart(product, 1);
     clearCart();
     expect(getCart()).toHaveLength(0);
+  });
+
+  it('should remove item when quantity reaches 0', () => {
+    const product = { id: 'miel', name: 'Miel', size: '500g', price: 30000 };
+    addToCart(product, 1);
+    const result = updateQuantity('miel', '500g', 0);
+    expect(result).toHaveLength(0);
+  });
+
+  it('should handle multiple different products', () => {
+    addToCart({ id: 'miel', name: 'Miel', size: '500g', price: 30000 }, 1);
+    addToCart({ id: 'polen', name: 'Polen', size: '1libra', price: 60000 }, 2);
+    expect(getCartCount()).toBe(3);
+    expect(getCartTotal()).toBe(150000);
   });
 });

@@ -1,11 +1,10 @@
 /**
  * Catálogo de productos — Casa Apícola Los Cerezos
- *
- * Para añadir más productos: agregar un objeto al array PRODUCTS.
- * El sistema genera automáticamente las cards en la sección de productos.
  */
 
-export const PRODUCTS = [
+import type { Product } from '@/types';
+
+export const PRODUCTS: Product[] = [
   {
     id: 'miel-multifloral',
     name: 'Miel Multifloral',

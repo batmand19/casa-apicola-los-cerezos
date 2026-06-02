@@ -1,10 +1,9 @@
 /**
  * Generadores de JSON-LD (Schema.org) para SEO
  * Casa Apícola Los Cerezos
- *
- * Referencia: https://schema.org
- * Validador: https://search.google.com/test/rich-results
  */
+
+import type { SchemaProduct, SchemaArticle, BreadcrumbItem } from '@/types';
 
 const SITE_URL = 'https://casa-apicola-los-cerezos.vercel.app';
 const SITE_NAME = 'Casa Apícola Los Cerezos';
@@ -22,7 +21,7 @@ export function organizationSchema() {
     logo: `${SITE_URL}/logo.png`,
     image: `${SITE_URL}/og-image.jpg`,
     email: 'hcanon@unal.edu.co',
-    telephone: '+57-320-806-5008', // ← Completar
+    telephone: '+57-320-806-5008',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Caldas',
@@ -31,7 +30,7 @@ export function organizationSchema() {
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 5.55,  // ← Coordenadas reales del apiario
+      latitude: 5.55,
       longitude: -73.45,
     },
     sameAs: [
@@ -74,9 +73,8 @@ export function organizationSchema() {
 
 /**
  * Schema de producto.
- * @param {Object} product - Datos del producto
  */
-export function productSchema(product) {
+export function productSchema(product: SchemaProduct) {
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
@@ -117,9 +115,8 @@ export function productSchema(product) {
 
 /**
  * Schema de artículo de blog.
- * @param {Object} article - Datos del artículo
  */
-export function articleSchema(article) {
+export function articleSchema(article: SchemaArticle) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BlogPosting',
@@ -168,9 +165,8 @@ export function websiteSchema() {
 
 /**
  * Schema de breadcrumb.
- * @param {Array} items - [{name, url}]
  */
-export function breadcrumbSchema(items) {
+export function breadcrumbSchema(items: BreadcrumbItem[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

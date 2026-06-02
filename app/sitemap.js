@@ -1,4 +1,5 @@
 import { ARTICLES } from '@/data/articles';
+import { PRODUCTS } from '@/data/products';
 
 const SITE_URL = 'https://casa-apicola-los-cerezos.vercel.app';
 
@@ -24,6 +25,13 @@ export default function sitemap() {
     },
   ];
 
+  const productPages = PRODUCTS.map((product) => ({
+    url: `${SITE_URL}/producto/${product.id}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly',
+    priority: 0.9,
+  }));
+
   const blogPages = ARTICLES.map((article) => ({
     url: `${SITE_URL}/blog/${article.slug}`,
     lastModified: new Date(article.date),
@@ -31,5 +39,5 @@ export default function sitemap() {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...blogPages];
+  return [...staticPages, ...productPages, ...blogPages];
 }

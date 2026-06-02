@@ -6,6 +6,10 @@ describe('ARTICLES data', () => {
     expect(ARTICLES.length).toBeGreaterThan(0);
   });
 
+  it('should have at least 7 articles for good SEO coverage', () => {
+    expect(ARTICLES.length).toBeGreaterThanOrEqual(7);
+  });
+
   it('each article should have required fields', () => {
     ARTICLES.forEach((article) => {
       expect(article).toHaveProperty('slug');
@@ -31,6 +35,19 @@ describe('ARTICLES data', () => {
   it('each article content should have at least one block', () => {
     ARTICLES.forEach((article) => {
       expect(article.content.length).toBeGreaterThan(0);
+    });
+  });
+
+  it('each article should have a valid category', () => {
+    const validCategories = ['Educación', 'Conservación', 'Guías', 'Salud', 'Cultura'];
+    ARTICLES.forEach((article) => {
+      expect(validCategories).toContain(article.category);
+    });
+  });
+
+  it('each article metaDescription should be under 160 chars', () => {
+    ARTICLES.forEach((article) => {
+      expect(article.metaDescription.length).toBeLessThanOrEqual(160);
     });
   });
 });
